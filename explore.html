@@ -3,475 +3,584 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tactical Food Rescue Marketplace - SurplusLink</title>
-  <link rel="stylesheet" href="common.css">
-  <link rel="stylesheet" href="explore.css">
+  <title>SurplusLink - Tactical Food Rescue</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="explore.css">
 </head>
 <body>
-  <div class="app-container explore-screen">
-    <!-- Device Status Bar -->
-    <header class="device-status-bar">
-      <span class="time">9:41</span>
-      <div class="icons">
-        <svg viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.9-1.9C9.28 19.64 10.59 20 12 20c4.97 0 9-4.03 9-9s-4.03-9-9-9zm0 15c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/></svg>
-        <svg viewBox="0 0 24 24"><path d="M12 4C7.31 4 3.07 5.9 0 8.98L12 21 24 8.98C20.93 5.9 16.69 4 12 4z"/></svg>
-        <svg viewBox="0 0 24 24"><path d="M17 4h-3V2h-4v2H7v18h10V4z"/></svg>
+  <!-- Prototype Navigation Drawer for Instant Screen Switching -->
+  <input type="checkbox" id="nav-drawer-toggle" class="drawer-toggle">
+  <label for="nav-drawer-toggle" class="drawer-trigger" title="All App Screens Menu">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    <span>App Screens</span>
+  </label>
+  <div class="drawer-overlay">
+    <label for="nav-drawer-toggle" class="drawer-backdrop"></label>
+    <nav class="drawer-menu">
+      <div class="drawer-header">
+        <h3>SurplusLink Architecture</h3>
+        <label for="nav-drawer-toggle" class="drawer-close">&times;</label>
       </div>
-    </header>
+      <div class="drawer-links">
+        <a href="index.html">1. Welcome Onboarding</a>
+        <a href="role-selection.html">2. Role Selection (3 States)</a>
+        <a href="login.html">3. Login & Sign Up (Provider/Recipient)</a>
+        <a href="signup.html">4. Create Account Form</a>
+        <a href="explore.html" class="active">5. Tactical Feed & Explore</a>
+        <a href="radar.html">6. Live Radar & Tactical Map</a>
+        <a href="safety-detail.html">7. Safety & Cold-Chain Protocol</a>
+        <a href="claim-review.html">8. Claim & Reserve Review</a>
+        <a href="reservation-pass.html">9. Active Dispatch Pass & QR</a>
+        <a href="call.html">10. E2EE Dispatch In-App Call</a>
+        <a href="cancel-reservation.html">11. Cancel Reservation / Ledger</a>
+        <a href="compliance-audit.html">12. Compliance & Audit (FDA/HACCP)</a>
+        <a href="list-food.html">13. List Food - Item Details</a>
+        <a href="listing-pickup.html">14. Fast Listing - Pickup & Dock</a>
+        <a href="alerts.html">15. Tactical Alerts & Verification</a>
+        <a href="queue.html">16. Live Pickup Queue</a>
+        <a href="impact.html">17. Bakery Impact Hub & Ledger</a>
+        <a href="profile.html">18. Profile & Operations Hub</a>
+      </div>
+    </nav>
+  </div>
 
-    <!-- Top App Header -->
-    <header class="app-header">
-      <div class="header-left">
-        <a href="explore.html" class="header-brand">
-          <div class="brand-icon-box">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+  <div class="app-viewport">
+    <main class="explore-screen">
+      <!-- Top Tactical Header -->
+      <header class="tactical-header">
+        <div class="header-brand-block">
+          <div class="brand-logo-mini">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#008744">
               <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
             </svg>
           </div>
-          <div class="brand-text-wrap">
+          <div class="brand-text-stack">
             <span class="brand-title">SurplusLink</span>
             <span class="brand-subtitle">Tactical Food Rescue</span>
           </div>
-        </a>
-      </div>
+        </div>
 
-      <div class="header-right">
-        <a href="radar.html" class="live-radar-pill">
-          <span class="pulse-dot"></span>
-          <span>LIVE RADAR</span>
-        </a>
-        <a href="alerts-feed.html" class="btn-icon" aria-label="Notifications">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-          </svg>
-          <span class="badge-dot">3</span>
-        </a>
-        <a href="profile.html" class="user-avatar-btn" aria-label="User Profile">
-          <img src="https://images.unsplash.com/photo-1583394293214-28ded15ee548?auto=format&fit=crop&w=120&q=80" alt="Michael Vance">
-        </a>
-      </div>
-    </header>
+        <div class="header-tactical-actions">
+          <a href="radar.html" class="live-radar-pill">
+            <span class="pulse-dot"></span>
+            <span>LIVE RADAR</span>
+          </a>
 
-    <!-- Main Scrollable Marketplace Feed -->
-    <main class="explore-content">
-      <!-- Search & Filter Row -->
-      <section class="search-filter-row">
-        <div class="search-input-box">
-          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <a href="alerts.html" class="icon-bubble-btn" aria-label="Alerts">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+            <span class="alert-counter-badge">3</span>
+          </a>
+
+          <a href="profile.html" class="avatar-profile-link" aria-label="Profile">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=80&q=80" alt="Active user avatar" class="avatar-img">
+          </a>
+        </div>
+      </header>
+
+      <!-- Search & Filter Controls -->
+      <section class="search-filter-section">
+        <div class="search-input-wrapper">
+          <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.2">
             <circle cx="11" cy="11" r="8"></circle>
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
           </svg>
-          <input type="text" class="search-field" placeholder="Search surplus food, bakeries, s...">
+          <input type="search" class="search-field" placeholder="Search surplus food, bakeries, s...">
+          <button type="button" class="btn-filter-icon" aria-label="Filter parameters">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.4">
+              <line x1="4" y1="6" x2="20" y2="6"></line>
+              <line x1="8" y1="12" x2="16" y2="12"></line>
+              <line x1="10" y1="18" x2="14" y2="18"></line>
+            </svg>
+          </button>
         </div>
-        <a href="#filters" class="filter-btn-square" aria-label="Filter Options">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="4" y1="21" x2="4" y2="14"></line>
-            <line x1="4" y1="10" x2="4" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="12"></line>
-            <line x1="12" y1="8" x2="12" y2="3"></line>
-            <line x1="20" y1="21" x2="20" y2="16"></line>
-            <line x1="20" y1="12" x2="20" y2="3"></line>
-            <line x1="1" y1="14" x2="7" y2="14"></line>
-            <line x1="9" y1="8" x2="15" y2="8"></line>
-            <line x1="17" y1="16" x2="23" y2="16"></line>
-          </svg>
-        </a>
+
+        <!-- Filter Chips Row (CSS Scrollable) -->
+        <div class="filter-chips-row">
+          <button type="button" class="chip chip-active">All Items 34</button>
+          <button type="button" class="chip chip-urgent">⚡ Urgent (&lt;1h) 5</button>
+          <button type="button" class="chip">Hot Meals 8</button>
+          <button type="button" class="chip">Bakery Surplus 14</button>
+          <button type="button" class="chip">Cold Produce 7</button>
+        </div>
       </section>
 
-      <!-- Category Filter Chips -->
-      <nav class="filter-chips-scroll" aria-label="Quick filters">
-        <a href="#all" class="filter-chip active">All Items 34</a>
-        <a href="#urgent" class="filter-chip urgent">⚡ Urgent (&lt;1h) 5</a>
-        <a href="#hot" class="filter-chip">Hot Meals 8</a>
-        <a href="#bakery" class="filter-chip">Fresh Baked 14</a>
-        <a href="#farm" class="filter-chip">Farm Produce 5</a>
-      </nav>
-
-      <!-- Tactical Live Radar Summary Card -->
-      <article class="radar-banner-card">
-        <div class="radar-banner-header">
-          <div class="radar-badge-group">
-            <div class="radar-pulse-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"></path>
-                <path d="M7.8 7.8c-2.3 2.3-2.3 6.1 0 8.5"></path>
-              </svg>
+      <!-- Tactical Live Radar Mini Card -->
+      <section class="tactical-radar-card">
+        <div class="radar-card-top">
+          <div class="radar-card-info">
+            <div class="radar-tag-row">
+              <span class="radar-label">TACTICAL LIVE RADAR</span>
+              <span class="live-status-badge">Live</span>
             </div>
-            <div>
-              <div style="display: flex; align-items: center; gap: 6px;">
-                <span class="radar-banner-title">TACTICAL LIVE RADAR</span>
-                <span class="live-tag">Live</span>
-              </div>
-              <div class="radar-banner-sub">18 rescue drops within 2 mi · Avg response: 14m</div>
-            </div>
+            <h2 class="radar-headline">18 rescue drops within 2.4 mi</h2>
+            <p class="radar-avg-time">Average response time: 14 mins</p>
           </div>
           <a href="radar.html" class="btn-map-view">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
+              <line x1="8" y1="2" x2="8" y2="18"></line>
+              <line x1="16" y1="6" x2="16" y2="22"></line>
             </svg>
             <span>Map View</span>
           </a>
         </div>
-        <div class="radar-drops-preview">
-          <span class="drop-pill bakery">● 0.4 mi (Bakery)</span>
-          <span class="drop-pill distance">⏱ 1.2 mi</span>
-          <span class="drop-pill prepared">● 0.8 mi (Prepared)</span>
-        </div>
-      </article>
 
-      <!-- Quick Donate Action Banner -->
-      <article class="donate-cta-card">
-        <div class="donate-cta-info">
-          <div class="donate-cta-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <line x1="12" y1="5" x2="12" y2="19"></line>
-              <line x1="5" y1="12" x2="19" y2="12"></line>
+        <div class="tactical-route-visual">
+          <div class="route-point point-red">
+            <span class="route-dot"></span>
+            <span class="route-label">0.4 mi (Bakery)</span>
+          </div>
+          <div class="route-point point-yellow">
+            <span class="route-label">⌀ 1.2 mi</span>
+          </div>
+          <div class="route-point point-green">
+            <span class="route-dot"></span>
+            <span class="route-label">0.8 mi (Prepared)</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Donate Surplus Batch Quick Banner -->
+      <section class="donate-banner-card">
+        <div class="donate-banner-left">
+          <div class="donate-icon-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="16"></line>
+              <line x1="8" y1="12" x2="16" y2="12"></line>
             </svg>
           </div>
-          <div>
-            <div class="donate-cta-title">
-              <span>Donate Surplus Batch</span>
-              <span class="donate-quick-tag">QUICK</span>
+          <div class="donate-text-block">
+            <div class="donate-title-row">
+              <span class="donate-title">Donate Surplus Batch</span>
+              <span class="quick-tag">QUICK</span>
             </div>
-            <div class="donate-cta-sub">Have surplus bakery food? List in 60s.</div>
+            <p class="donate-sub">Have surplus bakery or prepared food?</p>
           </div>
         </div>
-        <a href="list-food-step1.html" class="btn-list-now">
+        <a href="list-food.html" class="btn-list-food">
           <span>List Food Now</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <line x1="5" y1="12" x2="19" y2="12"></line>
             <polyline points="12 5 19 12 12 19"></polyline>
           </svg>
         </a>
-      </article>
+      </section>
 
-      <!-- Expiring Soon Showcase -->
-      <section>
-        <div class="section-header-row">
-          <h2 class="section-title">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#b45309" stroke-width="2">
+      <!-- Expiring Soon Carousel / Grid -->
+      <section class="expiring-section">
+        <div class="section-heading-row">
+          <div class="heading-with-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2.2">
+              <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path>
+            </svg>
+            <h2 class="section-title">Expiring Soon</h2>
+          </div>
+          <span class="timer-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <circle cx="12" cy="12" r="10"></circle>
               <polyline points="12 6 12 12 16 14"></polyline>
             </svg>
-            <span>Expiring Soon</span>
-          </h2>
-          <span class="section-badge-right">⏱ &lt; 60 Mins Left</span>
+            <span>&lt; 60 Mins Left</span>
+          </span>
         </div>
 
-        <article class="expiring-card">
-          <div class="expiring-img-wrap">
-            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80" alt="Fresh artisan sourdough loaves">
-            <div class="img-overlay-badges">
-              <span class="overlay-pill">📍 0.4 km away</span>
-              <span class="overlay-pill urgent">⏱ Expires in 35 mins</span>
+        <div class="horizontal-scroll-cards">
+          <!-- Card 1: Golden Crust -->
+          <article class="expiring-card">
+            <div class="card-media-wrapper">
+              <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=400&q=80" alt="Artisan Sourdough" class="card-media-img">
+              <div class="media-badges">
+                <span class="badge-dist">0.4 km away</span>
+                <span class="badge-timer">⏱ Expires in 35 mins</span>
+              </div>
             </div>
-          </div>
-          <div class="expiring-body">
-            <div class="item-meta-sub">
-              <span class="seller-name">Golden Crust Bakery ★ 4.9</span>
-              <span class="badge badge-veg">● Pure Veg</span>
-            </div>
-            <h3 class="item-main-title">8 Artisan Sourdough Loaves &amp; 6 Brioche Buns</h3>
-            <div class="item-tags-row">
-              <span class="item-quantity">14 items</span>
-              <span class="item-discount-tag">75% OFF</span>
-            </div>
-            <div class="price-reserve-row">
-              <div class="price-block">
-                <div style="display: flex; align-items: baseline; gap: 6px;">
-                  <span class="price-main">$4.50</span>
-                  <span class="price-original">$18.00</span>
+
+            <div class="card-content-body">
+              <div class="donor-rating-row">
+                <span class="donor-name">Golden Crust Bakery</span>
+                <span class="donor-rating">★ 4.9</span>
+                <span class="diet-pill-green">• Pure Veg</span>
+              </div>
+
+              <h3 class="item-title">8 Artisan Sourdough Loaves & 6 Brioche Buns</h3>
+
+              <div class="item-meta-row">
+                <span class="item-portions">14 items</span>
+                <span class="discount-pill">75% OFF</span>
+              </div>
+
+              <div class="card-action-footer">
+                <div class="price-stack">
+                  <div class="price-row">
+                    <strong class="current-price">$4.50</strong>
+                    <span class="original-price">$18.00</span>
+                  </div>
+                  <span class="savings-text">Save $13.50</span>
                 </div>
-                <span class="savings-label">Save $13.50</span>
+                <a href="safety-detail.html" class="btn-reserve">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                  </svg>
+                  <span>Reserve • $4.50</span>
+                </a>
               </div>
-              <a href="recipient-claim.html" class="btn-reserve-sm">
-                <span>Reserve $4.50</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </a>
             </div>
-          </div>
-        </article>
+          </article>
+
+          <!-- Card 2: Urban Kitchen -->
+          <article class="expiring-card">
+            <div class="card-media-wrapper">
+              <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=400&q=80" alt="Warm Healthy Meals" class="card-media-img">
+              <div class="media-badges">
+                <span class="badge-dist">0.8 km</span>
+                <span class="badge-timer">⏱ Expires in 48 mins</span>
+              </div>
+            </div>
+
+            <div class="card-content-body">
+              <div class="donor-rating-row">
+                <span class="donor-name">Urban Kitchen</span>
+                <span class="donor-rating">★ 4.8</span>
+                <span class="diet-pill-green">• Pure Veg</span>
+              </div>
+              <h3 class="item-title">Warm Healthy Grain Bowls</h3>
+              <div class="item-meta-row">
+                <span class="item-portions">11 items</span>
+                <span class="discount-pill">70% OFF</span>
+              </div>
+              <div class="card-action-footer">
+                <div class="price-stack">
+                  <div class="price-row">
+                    <strong class="current-price">$3.00</strong>
+                    <span class="original-price">$12.00</span>
+                  </div>
+                  <span class="savings-text">Save $9.00</span>
+                </div>
+                <a href="safety-detail.html" class="btn-reserve">
+                  <span>Reserve • $3.00</span>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
       </section>
 
-      <!-- Browse Logistics Type 4-Grid -->
-      <section>
-        <div class="section-header-row">
+      <!-- Browse by Logistics Type -->
+      <section class="logistics-type-section">
+        <div class="section-heading-row">
           <h2 class="section-title">Browse by Logistics Type</h2>
-          <a href="#all-logistics" style="font-size: 11.5px; font-weight: 700; color: #086d38; text-decoration: none;">See All (9)</a>
+          <a href="#see-all" class="link-see-all">See All (9)</a>
         </div>
+
         <div class="logistics-grid">
-          <a href="#hot-meals" class="logistics-card">
-            <div class="logistics-card-top">
-              <div class="logistics-icon-box">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M6 13.8V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v9.8"></path>
-                  <path d="M3 10h18"></path>
+          <div class="logistics-card">
+            <div class="logistics-icon-row">
+              <div class="logistics-icon-box box-mint">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#007a40" stroke-width="2">
+                  <path d="M12 2v20M2 12h20"></path>
                 </svg>
               </div>
-              <span class="logistics-qty-tag">8 ready</span>
+              <span class="quantity-badge">8 ready</span>
             </div>
-            <div class="logistics-title">Prepared Hot Meals</div>
-            <div class="logistics-desc">Inspected &amp; temp controlled</div>
-          </a>
+            <strong class="logistics-name">Prepared Hot Meals</strong>
+            <p class="logistics-sub">Inspected & temp controlled</p>
+          </div>
 
-          <a href="#baked" class="logistics-card">
-            <div class="logistics-card-top">
-              <div class="logistics-icon-box">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M3 13h18c0 4.418-4.03 8-9 8s-9-3.582-9-8Z"/>
-                  <path d="M12 5C7 5 4 8 3 13h18c-1-5-4-8-9-8Z"/>
+          <div class="logistics-card">
+            <div class="logistics-icon-row">
+              <div class="logistics-icon-box box-amber">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2">
+                  <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"></path>
                 </svg>
               </div>
-              <span class="logistics-qty-tag">14 ready</span>
+              <span class="quantity-badge">14 ready</span>
             </div>
-            <div class="logistics-title">Fresh Baked Goods</div>
-            <div class="logistics-desc">Loaves, rolls &amp; pastries</div>
-          </a>
+            <strong class="logistics-name">Fresh Baked Goods</strong>
+            <p class="logistics-sub">Loaves, rolls & pastries</p>
+          </div>
 
-          <a href="#produce" class="logistics-card">
-            <div class="logistics-card-top">
-              <div class="logistics-icon-box">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+          <div class="logistics-card">
+            <div class="logistics-icon-row">
+              <div class="logistics-icon-box box-green">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2">
+                  <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path>
                 </svg>
               </div>
-              <span class="logistics-qty-tag">5 crates</span>
+              <span class="quantity-badge">5 crates</span>
             </div>
-            <div class="logistics-title">Farm Produce</div>
-            <div class="logistics-desc">Greens, orchard fruit, roots</div>
-          </a>
+            <strong class="logistics-name">Farm Produce</strong>
+            <p class="logistics-sub">Greens, orchard fruit, roots</p>
+          </div>
 
-          <a href="#pantry" class="logistics-card">
-            <div class="logistics-card-top">
-              <div class="logistics-icon-box">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path>
+          <div class="logistics-card">
+            <div class="logistics-icon-row">
+              <div class="logistics-icon-box box-purple">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2">
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
                 </svg>
               </div>
-              <span class="logistics-qty-tag">7 batches</span>
+              <span class="quantity-badge">7 batches</span>
             </div>
-            <div class="logistics-title">Pantry &amp; Dry Goods</div>
-            <div class="logistics-desc">Grains, canned goods, pulses</div>
-          </a>
+            <strong class="logistics-name">Pantry & Dry Goods</strong>
+            <p class="logistics-sub">Grains, canned goods, pulses</p>
+          </div>
         </div>
       </section>
 
-      <!-- Instant Dispatch Feed Items -->
-      <section>
-        <div class="section-header-row">
+      <!-- Available for Instant Dispatch -->
+      <section class="instant-dispatch-section">
+        <div class="dispatch-header-row">
           <div>
             <h2 class="section-title">Available for Instant Dispatch</h2>
-            <div style="font-size: 11px; color: #64748b;">Vetted donors with active safety clearances</div>
+            <p class="dispatch-sub">Vetted donors with active safety clearances</p>
           </div>
-          <span style="font-size: 11px; font-weight: 700; color: #086d38;">Nearest First</span>
+          <button type="button" class="btn-sort">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="21" y1="10" x2="7" y2="10"></line>
+              <line x1="21" y1="6" x2="3" y2="6"></line>
+              <line x1="21" y1="14" x2="11" y2="14"></line>
+              <line x1="21" y1="18" x2="15" y2="18"></line>
+            </svg>
+            <span>Nearest First</span>
+          </button>
         </div>
 
-        <div class="dispatch-lots-list">
-          <!-- Lot 1: Baguettes -->
-          <article class="lot-card">
-            <div class="lot-card-top">
-              <div class="lot-thumb-wrap">
-                <img src="https://images.unsplash.com/photo-1589367920969-ab8e050bbb04?auto=format&fit=crop&w=250&q=80" alt="French Baguettes">
-                <span class="lot-thumb-badge">6 Left</span>
+        <div class="dispatch-cards-list">
+          <!-- Item 1: French Baguettes -->
+          <article class="dispatch-item-card">
+            <div class="dispatch-item-grid">
+              <div class="dispatch-media-box">
+                <img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&fit=crop&w=300&q=80" alt="French Baguettes" class="item-img">
+                <span class="inventory-tag">6 Left</span>
               </div>
-              <div class="lot-main-info">
-                <div class="lot-meta-header">
-                  <span>Harvest Bakery ★ 4.9 (210)</span>
-                  <span class="badge badge-veg">● Pure Veg · 0.4 km</span>
+              <div class="dispatch-info-box">
+                <div class="item-meta-top">
+                  <span class="donor-name-sm">Harmon Baker</span>
+                  <span class="rating-sm">★ 4.9 (210)</span>
+                  <span class="pill-sm-green">• Pure Veg</span>
+                  <span class="dist-sm">0.4 km</span>
                 </div>
-                <h3 class="lot-title">6 French Baguettes &amp; Seeded Batard</h3>
-                <div class="lot-badge-row">
-                  <span class="lot-pill expiring">⏱ Expires in 35 mins</span>
-                  <span class="lot-pill fresh">Baked Today</span>
-                  <span class="item-discount-tag">Save 75%</span>
+                <h3 class="dispatch-item-title">6 French Baguettes & Seeded Batard</h3>
+
+                <div class="item-tags-row">
+                  <span class="tag-alert">⏱ Expires in 35 mins</span>
+                  <span class="tag-status">Baked Today</span>
+                  <span class="tag-highlight">Save 75%</span>
                 </div>
-                <div class="lot-time-notice">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+
+                <div class="pickup-time-notice">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
                   <span>Pickup: 5:30 PM – 7:00 PM</span>
                 </div>
-              </div>
-            </div>
-            <div class="lot-footer-row">
-              <div class="price-block">
-                <div style="display: flex; align-items: baseline; gap: 6px;">
-                  <span class="price-main">$3.50</span>
-                  <span class="price-original">$14.00</span>
+
+                <div class="dispatch-bottom-row">
+                  <div class="price-col">
+                    <div class="price-val"><strong>$3.50</strong> <del>$14.00</del></div>
+                    <span class="pass-verified">🛡 Safety Pass</span>
+                  </div>
+                  <a href="safety-detail.html" class="btn-claim-action">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                    </svg>
+                    <span>Reserve 6 • $3.50</span>
+                  </a>
                 </div>
-                <span style="font-size: 10px; color: #059669; font-weight: 700;">🛡️ Safety Pass Verified</span>
               </div>
-              <a href="recipient-claim.html" class="btn-reserve-sm">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
-                <span>Reserve 6 · $3.50</span>
-              </a>
             </div>
           </article>
 
-          <!-- Lot 2: Rye Boules -->
-          <article class="lot-card">
-            <div class="lot-card-top">
-              <div class="lot-thumb-wrap">
-                <img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&fit=crop&w=250&q=80" alt="Organic Rye Boules">
-                <span class="lot-thumb-badge">4 Crates</span>
+          <!-- Item 2: Organic Rye Boules -->
+          <article class="dispatch-item-card">
+            <div class="dispatch-item-grid">
+              <div class="dispatch-media-box">
+                <img src="https://images.unsplash.com/photo-1589367920969-ab8e050bbb04?auto=format&fit=crop&w=300&q=80" alt="Organic Rye Boules" class="item-img">
+                <span class="inventory-tag">4 Crates</span>
               </div>
-              <div class="lot-main-info">
-                <div class="lot-meta-header">
-                  <span>Valley Bakery ★ 4.8 (156)</span>
-                  <span class="badge badge-veg">● Pure Veg · 0.8 km</span>
+              <div class="dispatch-info-box">
+                <div class="item-meta-top">
+                  <span class="donor-name-sm">Valley Mill</span>
+                  <span class="rating-sm">★ 4.8 (156)</span>
+                  <span class="pill-sm-green">• Pure Veg</span>
+                  <span class="dist-sm">0.8 km</span>
                 </div>
-                <h3 class="lot-title">Organic Rye Boules &amp; Walnut Batards</h3>
-                <div class="lot-badge-row">
-                  <span class="lot-pill expiring">⏱ Closing in 45m</span>
-                  <span class="lot-pill fresh">100% Organic</span>
-                  <span class="item-discount-tag">Community Subsidy</span>
+                <h3 class="dispatch-item-title">Organic Rye Boules & Walnut Batards</h3>
+
+                <div class="item-tags-row">
+                  <span class="tag-alert">⏱ Closing in 45m</span>
+                  <span class="tag-status">100% Organic</span>
+                  <span class="tag-highlight">Community Subsidy</span>
                 </div>
-                <div class="lot-time-notice">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+
+                <div class="weight-notice">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                  </svg>
                   <span>Est. Weight: ~28 kg total</span>
                 </div>
-              </div>
-            </div>
-            <div class="lot-footer-row">
-              <div class="price-block">
-                <div style="display: flex; align-items: baseline; gap: 6px;">
-                  <span class="price-main" style="color: #059669;">Free</span>
-                  <span class="price-original">$36.00</span>
+
+                <div class="dispatch-bottom-row">
+                  <div class="price-col">
+                    <div class="price-val"><strong class="text-green-bold">Free</strong> <del>$36.00</del></div>
+                    <span class="pass-verified">🛡 Safety Pass</span>
+                  </div>
+                  <a href="claim-review.html" class="btn-claim-action">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                    </svg>
+                    <span>Reserve Batch • Free</span>
+                  </a>
                 </div>
-                <span style="font-size: 10px; color: #059669; font-weight: 700;">🛡️ Verified Subsidy</span>
               </div>
-              <a href="recipient-claim.html" class="btn-reserve-sm" style="background: #059669;">
-                <span>Reserve Batch · Free</span>
-              </a>
             </div>
           </article>
 
-          <!-- Lot 3: Berry Cream Cakes -->
-          <article class="lot-card">
-            <div class="lot-card-top">
-              <div class="lot-thumb-wrap">
-                <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=250&q=80" alt="Eggless Berry Cream Cakes">
-                <span class="lot-thumb-badge">15 Units</span>
+          <!-- Item 3: Eggless Berry Cream Cakes -->
+          <article class="dispatch-item-card">
+            <div class="dispatch-item-grid">
+              <div class="dispatch-media-box">
+                <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=300&q=80" alt="Eggless Berry Cream Cakes" class="item-img">
+                <span class="inventory-tag">15 Units</span>
               </div>
-              <div class="lot-main-info">
-                <div class="lot-meta-header">
-                  <span>Sweet Crust ★ 4.9 (88)</span>
-                  <span class="badge badge-veg">● Pure Veg · 1.2 km</span>
+              <div class="dispatch-info-box">
+                <div class="item-meta-top">
+                  <span class="donor-name-sm">Sweet Layers</span>
+                  <span class="rating-sm">★ 4.9 (88)</span>
+                  <span class="pill-sm-green">• Pure Veg</span>
+                  <span class="dist-sm">1.2 km</span>
                 </div>
-                <h3 class="lot-title">Eggless Berry Cream Cakes &amp; Choux Box</h3>
-                <div class="lot-badge-row">
-                  <span class="lot-pill expiring">⏱ Expires in 40 mins</span>
-                  <span class="lot-pill fresh">100% Eggless</span>
-                  <span class="item-discount-tag">Save 75%</span>
+                <h3 class="dispatch-item-title">Eggless Berry Cream Cakes & Choux Box</h3>
+
+                <div class="item-tags-row">
+                  <span class="tag-alert">⏱ Expires in 40 mins</span>
+                  <span class="tag-status">100% Eggless</span>
+                  <span class="tag-highlight">Save 75%</span>
                 </div>
-                <div class="lot-time-notice">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+
+                <div class="pickup-time-notice">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="1" y="3" width="15" height="13"></rect>
+                    <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                    <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                    <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                  </svg>
                   <span>Curbside loading dock pickup accessible</span>
                 </div>
-              </div>
-            </div>
-            <div class="lot-footer-row">
-              <div class="price-block">
-                <div style="display: flex; align-items: baseline; gap: 6px;">
-                  <span class="price-main">$6.00</span>
-                  <span class="price-original">$24.00</span>
+
+                <div class="dispatch-bottom-row">
+                  <div class="price-col">
+                    <div class="price-val"><strong>$6.00</strong> <del>$24.00</del></div>
+                    <span class="pass-verified">🛡 Safety Pass</span>
+                  </div>
+                  <a href="safety-detail.html" class="btn-claim-action">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                    </svg>
+                    <span>Reserve 15 • $6.00</span>
+                  </a>
                 </div>
-                <span style="font-size: 10px; color: #059669; font-weight: 700;">🛡️ Safety Pass</span>
               </div>
-              <a href="recipient-claim.html" class="btn-reserve-sm">
-                <span>Reserve 15 · $6.00</span>
-              </a>
             </div>
           </article>
         </div>
       </section>
 
-      <!-- Weekly Impact Box -->
-      <article class="impact-milestone-box">
-        <div class="impact-milestone-top">
-          <div class="impact-milestone-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <!-- Weekly Rescued Banner -->
+      <section class="weekly-milestone-banner">
+        <div class="milestone-icon-box">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+        </div>
+        <div class="milestone-content">
+          <div class="milestone-title-row">
+            <span class="milestone-headline">1,280 kg Rescued This Week</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#007a40" stroke-width="2.5">
               <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
               <polyline points="17 6 23 6 23 12"></polyline>
             </svg>
           </div>
-          <span class="impact-milestone-title">1,280 kg Rescued This Week 📈</span>
+          <p class="milestone-sub">Supported across 24 local donors & partner shelters.</p>
+          <div class="milestone-cert-row">
+            <span>Good Samaritan Food Act Protected & HA</span>
+            <strong class="cert-pill">VERIFIED</strong>
+          </div>
         </div>
-        <p class="impact-milestone-desc">Supported across 24 local donors &amp; partner shelters.</p>
-        <div class="impact-milestone-legal">
-          <span>🛡️ Good Samaritan Food Act Protected</span>
-          <span class="badge badge-green">VERIFIED</span>
-        </div>
-      </article>
+      </section>
     </main>
 
-    <!-- App Bottom Navigation Bar -->
-    <nav class="bottom-nav" aria-label="Main Navigation">
-      <a href="explore.html" class="nav-item active">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
-        <span>Explore</span>
-      </a>
-      <a href="list-food-step1.html" class="nav-item nav-list-btn">
-        <div class="nav-icon-circle">
-          <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+    <!-- Bottom Persistent Navigation Bar -->
+    <nav class="bottom-nav-bar" aria-label="Main Navigation">
+      <a href="explore.html" class="nav-item nav-item-active">
+        <div class="nav-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+          </svg>
         </div>
-        <span>List</span>
+        <span class="nav-label">Explore</span>
       </a>
+
+      <a href="list-food.html" class="nav-item">
+        <div class="nav-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="16"></line>
+            <line x1="8" y1="12" x2="16" y2="12"></line>
+          </svg>
+        </div>
+        <span class="nav-label">List</span>
+      </a>
+
       <a href="reservation-pass.html" class="nav-item">
-        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"></rect><line x1="7" y1="8" x2="17" y2="8"></line><line x1="7" y1="12" x2="17" y2="12"></line></svg>
-        <span>Passes</span>
+        <div class="nav-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+            <line x1="7" y1="8" x2="17" y2="8"></line>
+            <line x1="7" y1="12" x2="17" y2="12"></line>
+            <line x1="7" y1="16" x2="13" y2="16"></line>
+          </svg>
+        </div>
+        <span class="nav-label">Passes</span>
       </a>
+
       <a href="queue.html" class="nav-item">
-        <svg viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
-        <span>Queue</span>
+        <div class="nav-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="8" y1="6" x2="21" y2="6"></line>
+            <line x1="8" y1="12" x2="21" y2="12"></line>
+            <line x1="8" y1="18" x2="21" y2="18"></line>
+            <line x1="3" y1="6" x2="3.01" y2="6"></line>
+            <line x1="3" y1="12" x2="3.01" y2="12"></line>
+            <line x1="3" y1="18" x2="3.01" y2="18"></line>
+          </svg>
+        </div>
+        <span class="nav-label">Queue</span>
       </a>
+
       <a href="impact.html" class="nav-item">
-        <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
-        <span>Impact</span>
+        <div class="nav-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="20" x2="18" y2="10"></line>
+            <line x1="12" y1="20" x2="12" y2="4"></line>
+            <line x1="6" y1="20" x2="6" y2="14"></line>
+          </svg>
+        </div>
+        <span class="nav-label">Impact</span>
       </a>
     </nav>
-
-    <!-- Prototype Screen Switcher -->
-    <details class="prototype-drawer">
-      <summary class="prototype-menu-trigger">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
-        <span>All 18 Screens</span>
-      </summary>
-      <div class="prototype-dropdown">
-        <div class="category-header">Auth & Onboarding</div>
-        <a href="index.html"><strong>1. Welcome Hero</strong> <span>p.1</span></a>
-        <a href="role-selection.html"><strong>2. Role Selection</strong> <span>p.2-4</span></a>
-        <a href="login.html"><strong>3. Login & Sign In</strong> <span>p.5-6</span></a>
-        <a href="register.html"><strong>4. Create Account</strong> <span>p.7-8</span></a>
-        
-        <div class="category-header">Discovery & Radar</div>
-        <a href="explore.html"><strong>5. Tactical Marketplace</strong> <span>p.9</span></a>
-        <a href="radar.html"><strong>6. Live Radar & Map</strong> <span>p.10</span></a>
-        <a href="safety-audit.html"><strong>7. Safety & Cold-Chain</strong> <span>p.11-12</span></a>
-        
-        <div class="category-header">Passes & Handoff</div>
-        <a href="reservation-pass.html"><strong>8. Active Dispatch Pass</strong> <span>p.13</span></a>
-        <a href="call-screen.html"><strong>9. In-App VoIP Call</strong> <span>p.14</span></a>
-        <a href="cancel-reservation.html"><strong>10. Cancel & Refund</strong> <span>p.15</span></a>
-        <a href="compliance-audit.html"><strong>11. Compliance & Audit</strong> <span>p.16</span></a>
-        
-        <div class="category-header">Donor & Operations</div>
-        <a href="list-food-step1.html"><strong>12. List Food: Details</strong> <span>p.17</span></a>
-        <a href="list-food-step2.html"><strong>13. List Food: Pickup</strong> <span>p.18</span></a>
-        <a href="alerts-feed.html"><strong>14. Tactical Feeds</strong> <span>p.19</span></a>
-        <a href="recipient-claim.html"><strong>15. NGO Claim Batch</strong> <span>p.20</span></a>
-        <a href="queue.html"><strong>16. Live Pickup Queue</strong> <span>p.21</span></a>
-        <a href="impact.html"><strong>17. Bakery Impact Hub</strong> <span>p.22</span></a>
-        <a href="profile.html"><strong>18. Profile & Operations</strong> <span>p.23</span></a>
-      </div>
-    </details>
   </div>
 </body>
 </html>
-

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SurplusLink - Safety & Cold Chain Protocol</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="safety-detail.css">
+</head>
+<body>
+  <!-- Prototype Navigation Drawer for Instant Screen Switching -->
+  <input type="checkbox" id="nav-drawer-toggle" class="drawer-toggle">
+  <label for="nav-drawer-toggle" class="drawer-trigger" title="All App Screens Menu">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    <span>App Screens</span>
+  </label>
+  <div class="drawer-overlay">
+    <label for="nav-drawer-toggle" class="drawer-backdrop"></label>
+    <nav class="drawer-menu">
+      <div class="drawer-header">
+        <h3>SurplusLink Architecture</h3>
+        <label for="nav-drawer-toggle" class="drawer-close">&times;</label>
+      </div>
+      <div class="drawer-links">
+        <a href="index.html">1. Welcome Onboarding</a>
+        <a href="role-selection.html">2. Role Selection (3 States)</a>
+        <a href="login.html">3. Login & Sign Up (Provider/Recipient)</a>
+        <a href="signup.html">4. Create Account Form</a>
+        <a href="explore.html">5. Tactical Feed & Explore</a>
+        <a href="radar.html">6. Live Radar & Tactical Map</a>
+        <a href="safety-detail.html" class="active">7. Safety & Cold-Chain Protocol</a>
+        <a href="claim-review.html">8. Claim & Reserve Review</a>
+        <a href="reservation-pass.html">9. Active Dispatch Pass & QR</a>
+        <a href="call.html">10. E2EE Dispatch In-App Call</a>
+        <a href="cancel-reservation.html">11. Cancel Reservation / Ledger</a>
+        <a href="compliance-audit.html">12. Compliance & Audit (FDA/HACCP)</a>
+        <a href="list-food.html">13. List Food - Item Details</a>
+        <a href="listing-pickup.html">14. Fast Listing - Pickup & Dock</a>
+        <a href="alerts.html">15. Tactical Alerts & Verification</a>
+        <a href="queue.html">16. Live Pickup Queue</a>
+        <a href="impact.html">17. Bakery Impact Hub & Ledger</a>
+        <a href="profile.html">18. Profile & Operations Hub</a>
+      </div>
+    </nav>
+  </div>
+
+  <div class="app-viewport">
+    <main class="safety-screen">
+      <!-- App Header -->
+      <header class="app-header">
+        <a href="radar.html" class="icon-nav-btn" aria-label="Go back">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+        </a>
+
+        <div class="header-center-info">
+          <div class="header-title-row">
+            <h1 class="header-title">Safety &amp; Cold Chain</h1>
+            <span class="verified-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>VERIFIED</span>
+            </span>
+          </div>
+          <span class="header-protocol-sub">SurplusLink Protocol</span>
+        </div>
+
+        <div class="header-shield-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#008744" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+        </div>
+      </header>
+
+      <!-- Protocol Pass Identification Card -->
+      <section class="pass-id-card">
+        <div class="haccp-status-pill">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+            <circle cx="12" cy="12" r="10"></circle>
+          </svg>
+          <span>PASSED HACCP CRITERIA</span>
+        </div>
+
+        <div class="pass-title-row">
+          <div>
+            <h2 class="pass-number">Pass #FSP-9921</h2>
+            <p class="protocol-desc">Standard Cold-Chain Chain of Custody Protocol</p>
+          </div>
+          <div class="pass-shield-box">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#008744" stroke-width="2.5">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <polyline points="9 12 12 15 16 10"></polyline>
+            </svg>
+          </div>
+        </div>
+
+        <div class="pure-veg-badge-row">
+          <span class="pure-veg-pill">● Pure Veg Certified</span>
+        </div>
+
+        <div class="reserve-price-banner">
+          <div class="reserve-cost-col">
+            <span class="cost-label">Rescue Reserve:</span>
+            <strong class="cost-val">$6.00</strong>
+          </div>
+          <div class="msrp-savings">
+            <span>(MSRP $28.00 • Save $22.00)</span>
+          </div>
+        </div>
+
+        <div class="handover-readiness-row">
+          <span class="live-dot-green"></span>
+          <span class="handover-text">Ready for Immediate Handover</span>
+          <span class="validated-time">Validated 8m ago</span>
+        </div>
+      </section>
+
+      <!-- Cold-Chain Temperature Telemetry Card -->
+      <section class="telemetry-card">
+        <div class="telemetry-header">
+          <div class="telemetry-title-block">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#008744" stroke-width="2">
+              <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"></path>
+            </svg>
+            <div>
+              <h3 class="telemetry-title">Cold-Chain Temperature</h3>
+              <span class="telemetry-sub">Chilled storage requirement</span>
+            </div>
+          </div>
+          <div class="temp-readout">
+            <span class="temp-degrees">3.4°C</span>
+            <span class="safe-zone-text">Safe Zone (0°C – 4°C)</span>
+          </div>
+        </div>
+
+        <!-- Continuous Probe Log Chart -->
+        <div class="probe-chart-container">
+          <div class="chart-legend-row">
+            <span class="chart-label">Continuous Probe Log (Past 4 Hours)</span>
+            <span class="chart-status-pill">Within Tolerance</span>
+          </div>
+
+          <!-- SVG Temperature Curve Graph -->
+          <div class="svg-chart-wrapper">
+            <svg viewBox="0 0 320 80" class="temp-chart-svg">
+              <!-- Safe Zone Background Fill -->
+              <rect x="0" y="10" width="320" height="60" fill="#ecfdf5" rx="6" />
+              <!-- Safe Target Guideline -->
+              <line x1="0" y1="40" x2="320" y2="40" stroke="#a7f3d0" stroke-width="1.5" stroke-dasharray="4,4" />
+
+              <!-- Smooth Curve Line -->
+              <path 
+                d="M 20 48 Q 100 35, 120 38 T 220 52 T 300 45" 
+                fill="none" 
+                stroke="#008744" 
+                stroke-width="3" 
+                stroke-linecap="round"
+              />
+
+              <!-- Plot Points -->
+              <circle cx="20" cy="48" r="4" fill="#008744" />
+              <circle cx="120" cy="38" r="4" fill="#008744" />
+              <circle cx="220" cy="52" r="4" fill="#008744" />
+              <circle cx="300" cy="45" r="5" fill="#10b981" stroke="#ffffff" stroke-width="2" />
+            </svg>
+
+            <!-- Chart Timestamps -->
+            <div class="chart-timestamps-row">
+              <div class="time-col">
+                <span class="ts-time">10:30 AM</span>
+                <span class="ts-temp">(3.2°C)</span>
+              </div>
+              <div class="time-col">
+                <span class="ts-time">12:00 PM</span>
+                <span class="ts-temp">(3.5°C)</span>
+              </div>
+              <div class="time-col">
+                <span class="ts-time">1:30 PM</span>
+                <span class="ts-temp">(3.1°C)</span>
+              </div>
+              <div class="time-col">
+                <span class="ts-time">Now</span>
+                <span class="ts-temp">(3.4°C)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bake & Cook Time Limits (2-Col Card) -->
+      <section class="holding-time-card">
+        <div class="holding-col">
+          <div class="holding-label-row">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#475569" stroke-width="2">
+              <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+              <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+              <line x1="6" y1="1" x2="6" y2="4"></line>
+              <line x1="10" y1="1" x2="10" y2="4"></line>
+              <line x1="14" y1="1" x2="14" y2="4"></line>
+            </svg>
+            <span class="col-title">BAKE / COOK TIME</span>
+          </div>
+          <strong class="col-val">2:00 PM</strong>
+          <span class="col-sub">5h 30m elapsed</span>
+        </div>
+
+        <div class="col-divider"></div>
+
+        <div class="holding-col">
+          <div class="holding-label-row">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            <span class="col-title">SAFE HOLDING MAX</span>
+          </div>
+          <strong class="col-val text-amber">10:30 PM</strong>
+          <span class="col-sub text-green-bold">4h 30m safe buffer</span>
+        </div>
+      </section>
+
+      <!-- Packaging & Seal Integrity Checklist -->
+      <section class="checklist-section">
+        <div class="checklist-header">
+          <h3 class="section-heading">Packaging &amp; Seal Integrity</h3>
+          <span class="checklist-score">3 of 3 Verified</span>
+        </div>
+
+        <div class="checklist-items">
+          <div class="check-item">
+            <div class="check-icon-circle">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <div class="check-item-text">
+              <strong class="check-title">Food-Grade Insulated Containers</strong>
+              <span class="check-desc">Commercial poly-tubs sealed and sanitized</span>
+            </div>
+          </div>
+
+          <div class="check-item">
+            <div class="check-icon-circle">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <div class="check-item-text">
+              <strong class="check-title">Tamper-Evident Tape Intact</strong>
+              <span class="check-desc">Security zip-bands uncompromised</span>
+            </div>
+          </div>
+
+          <div class="check-item">
+            <div class="check-icon-circle">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <div class="check-item-text">
+              <strong class="check-title">Clear Allergen Labels Applied</strong>
+              <span class="check-desc">Itemized batch card attached to lids</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Donor Facility & Prep Evidence -->
+      <section class="evidence-section">
+        <div class="evidence-header">
+          <h3 class="section-heading">Donor Facility &amp; Prep Evidence</h3>
+          <span class="bay-tag">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="10" r="3"></circle>
+              <path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 7 8 11.7z"></path>
+            </svg>
+            <span>Kitchen Bay 4</span>
+          </span>
+        </div>
+
+        <div class="grade-banner">
+          <div class="grade-score-box">98</div>
+          <div class="grade-text">
+            <span class="grade-label">Public Health Grade A</span>
+            <span class="grade-details">Seattle Dept of Health • Inspected 12d ago</span>
+          </div>
+          <svg class="grade-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#008744" stroke-width="2.5">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </div>
+
+        <!-- 2 Photo Evidence Cards -->
+        <div class="evidence-photos-grid">
+          <div class="photo-card">
+            <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=300&q=80" alt="Batch Photo" class="evidence-img">
+            <div class="photo-overlay-caption">
+              <strong class="caption-tag">Batch Photo</strong>
+              <span class="caption-sub">Tray 1–4: Roasted Veg</span>
+            </div>
+          </div>
+
+          <div class="photo-card">
+            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=300&q=80" alt="Probe Sensor Verification" class="evidence-img">
+            <div class="photo-overlay-caption">
+              <strong class="caption-tag">Probe Verification</strong>
+              <span class="caption-sub">Probe sensor readout</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Allergen & Diet Matrix -->
+      <section class="allergen-section">
+        <div class="allergen-header">
+          <h3 class="section-heading">Allergen &amp; Diet Matrix</h3>
+          <span class="haccp-form-tag">HACCP-Form 4B</span>
+        </div>
+
+        <div class="allergen-badges-row">
+          <span class="allergen-tag tag-vegan">VEGAN CERTIFIED</span>
+          <span class="allergen-tag tag-dairy">DAIRY-FREE</span>
+          <span class="allergen-tag tag-nut">NUT-FREE</span>
+          <span class="allergen-tag tag-gluten">CONTAINS: GLUTEN (PITA)</span>
+        </div>
+
+        <div class="cross-contamination-box">
+          <div class="advisory-title-row">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="16" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+            <strong class="advisory-title">Cross-Contamination Advisory</strong>
+          </div>
+          <p class="advisory-text">
+            Prepared in a commercial commissary that handles sesame, egg, and soy. Shared convection oven calibrated with segregated sheet pans.
+          </p>
+        </div>
+      </section>
+
+      <!-- Bill Emerson Legal Notice -->
+      <section class="legal-notice-box">
+        <div class="legal-icon-box">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#008744" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+        </div>
+        <div class="legal-text-col">
+          <strong class="legal-title">Bill Emerson Good Samaritan Food Donation Act</strong>
+          <p class="legal-body">
+            Both donor and recipient organization are legally shielded from civil and criminal liability when handling wholesome food in good faith compliance under Federal Public Law 104–210.
+          </p>
+        </div>
+      </section>
+
+      <!-- PURE HTML/CSS DYNAMIC STATE (Demonstrating Pages 11 & 12) -->
+      <!-- Checkbox enables the vibrant reserve button -->
+      <div class="custody-acceptance-container">
+        <input type="checkbox" id="inspection-confirm" class="inspection-toggle-input">
+        
+        <label for="inspection-confirm" class="inspection-checkbox-label">
+          <span class="checkbox-box"></span>
+          <span class="label-text">
+            I confirm physical inspection of containers upon custody transfer, verify temp remains &lt; 4°C, and agree to transfer under HACCP cold-chain guidelines.
+          </span>
+        </label>
+
+        <!-- CTA Action Buttons -->
+        <div class="actions-wrapper">
+          <a href="claim-review.html" class="btn-reserve-food">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            <span>Request &amp; Reserve This Food • $6.00</span>
+          </a>
+
+          <a href="compliance-audit.html" class="btn-download-pdf">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            <span>Download Compliance PDF (FSP-9921)</span>
+          </a>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

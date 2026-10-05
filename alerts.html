@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SurplusLink - Tactical Feeds & Alerts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="alerts.css">
+</head>
+<body>
+  <!-- Prototype Navigation Drawer for Instant Screen Switching -->
+  <input type="checkbox" id="nav-drawer-toggle" class="drawer-toggle">
+  <label for="nav-drawer-toggle" class="drawer-trigger" title="All App Screens Menu">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    <span>App Screens</span>
+  </label>
+  <div class="drawer-overlay">
+    <label for="nav-drawer-toggle" class="drawer-backdrop"></label>
+    <nav class="drawer-menu">
+      <div class="drawer-header">
+        <h3>SurplusLink Architecture</h3>
+        <label for="nav-drawer-toggle" class="drawer-close">&times;</label>
+      </div>
+      <div class="drawer-links">
+        <a href="index.html">1. Welcome Onboarding</a>
+        <a href="role-selection.html">2. Role Selection (3 States)</a>
+        <a href="login.html">3. Login & Sign Up (Provider/Recipient)</a>
+        <a href="signup.html">4. Create Account Form</a>
+        <a href="explore.html">5. Tactical Feed & Explore</a>
+        <a href="radar.html">6. Live Radar & Tactical Map</a>
+        <a href="safety-detail.html">7. Safety & Cold-Chain Protocol</a>
+        <a href="claim-review.html">8. Claim & Reserve Review</a>
+        <a href="reservation-pass.html">9. Active Dispatch Pass & QR</a>
+        <a href="call.html">10. E2EE Dispatch In-App Call</a>
+        <a href="cancel-reservation.html">11. Cancel Reservation / Ledger</a>
+        <a href="compliance-audit.html">12. Compliance & Audit (FDA/HACCP)</a>
+        <a href="list-food.html">13. List Food - Item Details</a>
+        <a href="listing-pickup.html">14. Fast Listing - Pickup & Dock</a>
+        <a href="alerts.html" class="active">15. Tactical Alerts & Verification</a>
+        <a href="queue.html">16. Live Pickup Queue</a>
+        <a href="impact.html">17. Bakery Impact Hub & Ledger</a>
+        <a href="profile.html">18. Profile & Operations Hub</a>
+      </div>
+    </nav>
+  </div>
+
+  <div class="app-viewport">
+    <main class="alerts-screen">
+      <!-- App Header -->
+      <header class="app-header">
+        <div class="header-brand-block">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#008744" stroke-width="2.5">
+            <path d="M16 3h5v5"></path>
+            <path d="M4 20L21 3"></path>
+            <path d="M21 16v5h-5"></path>
+            <path d="M15 15l6 6"></path>
+            <path d="M4 4l5 5"></path>
+          </svg>
+          <div class="brand-text">
+            <strong class="brand-title">SurplusLink</strong>
+            <span class="brand-sub">Alerts Feed</span>
+          </div>
+        </div>
+
+        <div class="header-actions">
+          <button type="button" class="btn-metro-hub">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="#008744"><circle cx="12" cy="12" r="10"></circle></svg>
+            <span>Metro Hub</span>
+          </button>
+
+          <a href="alerts.html" class="icon-bell-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+            <span class="bell-badge">3</span>
+          </a>
+
+          <a href="profile.html" class="avatar-link">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=80&q=80" alt="User avatar" class="avatar-thumb">
+          </a>
+        </div>
+      </header>
+
+      <!-- Tactical Feeds Title Bar -->
+      <section class="feeds-title-bar">
+        <div class="title-left">
+          <span class="live-dot-red"></span>
+          <h1 class="page-title">Tactical Feeds</h1>
+          <span class="badge-pending">8 PENDING</span>
+        </div>
+        <div class="title-right">
+          <a href="#read-all" class="link-mark-read">Mark all read</a>
+          <button type="button" class="btn-filter-icon" aria-label="Filter">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="4" y1="6" x2="20" y2="6"></line>
+              <line x1="8" y1="12" x2="16" y2="12"></line>
+              <line x1="10" y1="18" x2="14" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </section>
+
+      <!-- Filter Chips Row -->
+      <div class="filter-chips-scroll">
+        <button type="button" class="chip chip-active">All Alerts 8</button>
+        <button type="button" class="chip chip-urgent">● Urgent Rescue (&lt;1h) 3</button>
+        <button type="button" class="chip">❄️ Cold Chain</button>
+        <button type="button" class="chip">Bakery Surplus</button>
+      </div>
+
+      <!-- Urgent Tactical Live Radar Drop Card -->
+      <section class="live-radar-drop-card">
+        <div class="radar-drop-head">
+          <span class="radar-tag">● TACTICAL LIVE RADAR</span>
+          <span class="window-pill">⏱ 14m window</span>
+        </div>
+
+        <div class="radar-drop-body">
+          <h2 class="drop-title">Immediate Rescue Drop</h2>
+          <span class="drop-location">Artisan Bakery Co. • 0.4 mi away</span>
+          <div class="drop-meta-tags">
+            <span class="meta-tag">38 Ready Meals</span>
+            <span class="meta-tag">HACCP Logged</span>
+          </div>
+        </div>
+
+        <a href="radar.html" class="btn-accept-run">
+          <span>Accept Run</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </section>
+
+      <!-- Active Operations Section -->
+      <section class="operations-section">
+        <div class="section-head-row">
+          <strong class="sec-title">TODAY • ACTIVE OPERATIONS</strong>
+          <span class="sec-meta">Live Dispatch Stream</span>
+        </div>
+
+        <div class="feed-cards-list">
+          <!-- Card 1: Critical Expiry -->
+          <article class="feed-card card-border-red">
+            <div class="feed-card-header">
+              <span class="alert-type-red">⚡ Critical Expiry: 35m</span>
+              <span class="dist-time">0.4 km away • 2m ago</span>
+            </div>
+
+            <div class="feed-card-main">
+              <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=140&q=80" alt="Bread batch" class="feed-item-thumb">
+              <div class="feed-info-col">
+                <h3 class="feed-item-title">8 Artisan Sourdough &amp; 6 Brioche Buns</h3>
+                <span class="feed-donor-sub">Golden Crust Bakery • Shelf life critical</span>
+                <span class="diet-spec">● Pure Veg • 14 units</span>
+              </div>
+            </div>
+
+            <div class="feed-card-footer">
+              <span class="cutoff-notice">⏱ Pickup cutoff: 19:45</span>
+              <div class="footer-actions">
+                <a href="radar.html" class="btn-route-link">Route</a>
+                <a href="safety-detail.html" class="btn-claim-batch">Claim Batch</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2: HACCP Safe Cold Chain -->
+          <article class="feed-card card-border-green">
+            <div class="feed-card-header">
+              <span class="alert-type-green">🛡 HACCP Safe Cold Chain</span>
+              <span class="dist-time">Pass #FSP-9921 • 18m ago</span>
+            </div>
+
+            <div class="telemetry-box">
+              <div class="telemetry-top">
+                <div class="snowflake-icon-box">❄️</div>
+                <div class="telemetry-info">
+                  <div class="temp-optimal-row">
+                    <strong class="temp-readout">3.4°C</strong>
+                    <span class="badge-optimal">Optimal</span>
+                  </div>
+                  <span class="probe-sub">Automated BLE Probe • Safe Limit: 0–4°C</span>
+                </div>
+                <div class="van-spec">
+                  <strong class="van-id">Van #12 Chiller</strong>
+                  <span class="van-dest">Transiting to Central Depot</span>
+                </div>
+              </div>
+              <p class="telemetry-desc">
+                Automated sensor verified continuous refrigeration for dairy &amp; chilled sandwich pallets across 3.8 mi corridor.
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 3: Courier at Loading Dock -->
+          <article class="feed-card">
+            <div class="feed-card-header">
+              <span class="alert-type-blue">🚚 Courier at Loading Dock</span>
+              <span class="dist-time">32m ago</span>
+            </div>
+
+            <div class="courier-dock-row">
+              <img src="https://images.unsplash.com/photo-1586769852044-692d6e3703f0?auto=format&fit=crop&w=120&q=80" alt="Marco S." class="courier-avatar">
+              <div class="courier-info">
+                <strong class="courier-name">Driver Marco S. arrived</strong>
+                <span class="dock-batch">Dock Bay 4 • Batch #SL-4089</span>
+              </div>
+              <a href="reservation-pass.html" class="btn-pass-qr">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                  <path d="M7 7h.01M17 7h.01M7 17h.01M17 17h.01"></path>
+                </svg>
+                <span>Pass QR</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 4: Pantry Inbound Request -->
+          <article class="feed-card">
+            <div class="feed-card-header">
+              <span class="alert-type-purple">📦 Pantry Inbound Request</span>
+              <span class="dist-time">1h ago</span>
+            </div>
+
+            <h3 class="inbound-title">Hope Shelter locked 42 Prepared Hot Meals</h3>
+            <p class="inbound-desc">
+              Distribution volunteer squad confirmed arrival at 18:30 for evening family dinner service.
+            </p>
+
+            <div class="inbound-tags-row">
+              <span class="tag-hot">Hot Chain Maintained</span>
+              <span class="tag-zero-waste">Zero Waste Certified</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Earlier This Week Section -->
+      <section class="earlier-section">
+        <div class="section-head-row">
+          <strong class="sec-title">EARLIER THIS WEEK</strong>
+          <span class="sec-meta">System &amp; Verification</span>
+        </div>
+
+        <div class="feed-cards-list">
+          <!-- Card 5: Weekly Milestone -->
+          <article class="feed-card card-milestone">
+            <div class="feed-card-header">
+              <span class="milestone-label">📈 Weekly Milestone Achieved</span>
+              <span class="dist-time">Yesterday</span>
+            </div>
+
+            <div class="milestone-stats-grid">
+              <div class="milestone-stat">
+                <span class="m-label">Rescued Weight</span>
+                <strong class="m-val text-green">185 lbs</strong>
+              </div>
+              <div class="milestone-stat">
+                <span class="m-label">Community Value</span>
+                <strong class="m-val text-green">$1,420</strong>
+              </div>
+            </div>
+
+            <p class="milestone-summary">
+              Your hub ranks in the top 5% speed-to-dispatch in the metro area this week with zero spoilage flags.
+            </p>
+          </article>
+
+          <!-- Card 6: Compliance Audit Signed -->
+          <article class="feed-card">
+            <div class="feed-card-header">
+              <span class="alert-type-green">🛡 Compliance Audit Signed</span>
+              <span class="dist-time">2d ago</span>
+            </div>
+
+            <p class="audit-signed-desc">
+              Weekly Bill Emerson Good Samaritan Food Donation Act &amp; safe-handling chain digital ledger has been cryptographically signed and archived.
+            </p>
+
+            <div class="audit-cert-row">
+              <span class="hash-tag">AUDIT-HASH-78190B</span>
+              <a href="compliance-audit.html" class="link-cert">View Certificate ↗</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Urgent Alert Channels Settings Card -->
+      <section class="urgent-channel-card">
+        <div class="channel-head">
+          <div class="channel-title-row">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#008744" stroke-width="2">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            </svg>
+            <strong class="channel-title">Urgent Alert Channels</strong>
+          </div>
+          <span class="badge-automated">Automated</span>
+        </div>
+
+        <p class="channel-desc">
+          Critical rescue opportunities expiring within 45 minutes bypass silent mode via loud critical push sound and SMS dispatch ping.
+        </p>
+
+        <div class="sms-dispatch-row">
+          <span class="sms-number">SMS Dispatch: <strong>+1 (555) 234-8901</strong></span>
+          <a href="#configure" class="link-configure">Configure</a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="bottom-nav-bar" aria-label="Main Navigation">
+      <a href="radar.html" class="nav-item">
+        <div class="nav-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+          </svg>
+        </div>
+        <span class="nav-label">Radar</span>
+      </a>
+
+      <a href="list-food.html" class="nav-item">
+        <div class="nav-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="16"></line>
+            <line x1="8" y1="12" x2="16" y2="12"></line>
+          </svg>
+        </div>
+        <span class="nav-label">List Food</span>
+      </a>
+
+      <a href="reservation-pass.html" class="nav-item">
+        <div class="nav-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+            <line x1="7" y1="8" x2="17" y2="8"></line>
+            <line x1="7" y1="12" x2="17" y2="12"></line>
+            <line x1="7" y1="16" x2="13" y2="16"></line>
+          </svg>
+        </div>
+        <span class="nav-label">Passes</span>
+      </a>
+
+      <a href="alerts.html" class="nav-item nav-item-active">
+        <div class="nav-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+        </div>
+        <span class="nav-label">Alerts</span>
+      </a>
+
+      <a href="profile.html" class="nav-item">
+        <div class="nav-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </div>
+        <span class="nav-label">Profile</span>
+      </a>
+    </nav>
+  </div>
+</body>
+</html>

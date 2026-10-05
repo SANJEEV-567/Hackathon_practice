@@ -1,652 +1,492 @@
 /* ==========================================================================
-   SurplusLink - Welcome & Bakery Rescue Landing (Screen 1)
-   Responsive Design: Mobile-First, Fluid Tablet, & Two-Column Desktop
+   SurplusLink - Design System & Onboarding Hero (index.css)
+   Mobile-First Architecture: Mobile (<600px) | Tablet (600px-1024px) | Desktop (>1024px)
    ========================================================================== */
-@import url('common.css');
 
-/* Base Container Reset */
-.welcome-screen {
-  position: relative;
-  min-height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  background-color: #f8fafc;
-  overflow-x: hidden;
+:root {
+  --color-primary: #006837;
+  --color-primary-hover: #00502a;
+  --color-primary-light: #e8f5ee;
+  --color-primary-tint: #ecfdf5;
+  --color-accent-green: #10b981;
+  --color-text-dark: #111827;
+  --color-text-muted: #4b5563;
+  --color-text-light: #9ca3af;
+  --color-bg-base: #f4f6f8;
+  --color-card-bg: #ffffff;
+  --color-border: #e5e7eb;
+  --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-full: 9999px;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 20px -2px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 12px 32px -4px rgba(0, 104, 55, 0.15);
+  --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Main Hero Wrapper */
-.welcome-hero-wrap {
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-bg-base);
+  color: var(--color-text-dark);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ==========================================================================
+   Pure HTML/CSS Screen Switching Navigation Drawer
+   ========================================================================== */
+.drawer-toggle {
+  display: none;
+}
+
+.drawer-trigger {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 9999;
+  background: rgba(17, 24, 39, 0.9);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  padding: 8px 14px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  transition: var(--transition);
+}
+
+.drawer-trigger:hover {
+  background: var(--color-primary);
+  transform: translateY(-1px);
+}
+
+.drawer-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.drawer-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.drawer-menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 320px;
+  max-width: 85vw;
+  height: 100%;
+  background: #ffffff;
+  box-shadow: -4px 0 25px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow-y: auto;
+}
+
+.drawer-header {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-border);
+  background: #f9fafb;
+}
+
+.drawer-header h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+}
+
+.drawer-close {
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--color-text-muted);
+  line-height: 1;
+}
+
+.drawer-links {
+  padding: 12px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.drawer-links a {
+  padding: 10px 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-text-dark);
+  text-decoration: none;
+  border-left: 3px solid transparent;
+  transition: var(--transition);
+}
+
+.drawer-links a:hover,
+.drawer-links a.active {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  border-left-color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* Open drawer when checkbox is checked */
+.drawer-toggle:checked ~ .drawer-overlay {
+  visibility: visible;
+  opacity: 1;
+}
+
+.drawer-toggle:checked ~ .drawer-overlay .drawer-menu {
+  transform: translateX(0);
+}
+
+/* ==========================================================================
+   App Viewport Container
+   ========================================================================== */
+.app-viewport {
   width: 100%;
+  max-width: 440px;
   min-height: 100vh;
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.08);
+}
+
+.welcome-screen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   position: relative;
 }
 
 /* ==========================================================================
-   1. MOBILE PRESENTATION (< 768px)
+   Hero Imagery & Top Badges
    ========================================================================== */
-
-/* Visual Showcase (Top Section on Mobile) */
-.welcome-visual-col {
-  order: 1;
+.hero-image-wrapper {
   position: relative;
   width: 100%;
-  height: 48vh;
-  min-height: 300px;
+  height: 52vh;
+  min-height: 340px;
+  background-color: #2b2623;
   overflow: hidden;
 }
 
-.hero-image-card {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.hero-img {
+.hero-bg-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 25%;
-  display: block;
+  object-position: center 30%;
+  filter: brightness(0.92) contrast(1.05);
 }
 
-.hero-image-overlay {
+.hero-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    to bottom,
-    rgba(15, 23, 42, 0.4) 0%,
-    rgba(15, 23, 42, 0.08) 45%,
-    rgba(248, 250, 252, 0.85) 90%,
+    180deg, 
+    rgba(15, 23, 42, 0.4) 0%, 
+    rgba(0, 0, 0, 0.1) 40%, 
+    rgba(255, 255, 255, 0.8) 90%,
     #ffffff 100%
   );
-  pointer-events: none;
 }
 
-/* Floating Impact Badges */
-.hero-floating-badges {
+.top-status-pills {
   position: absolute;
-  top: 16px;
+  top: 24px;
   left: 16px;
   right: 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 8px;
-  z-index: 5;
-}
-
-.stat-pill-dark {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 14px;
-  border-radius: var(--radius-full);
-  background: rgba(15, 23, 42, 0.82);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  color: #ffffff;
-  font-size: 11.5px;
-  font-weight: 700;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
-  white-space: nowrap;
-}
-
-.stat-pill-light {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 14px;
-  border-radius: var(--radius-full);
-  background: rgba(255, 255, 255, 0.94);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  color: #0f172a;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.5px;
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  white-space: nowrap;
-}
-
-.stat-pill-light svg {
-  width: 14px;
-  height: 14px;
-  stroke: var(--primary);
-  fill: none;
-}
-
-/* Content Column (Bottom Sheet Modal on Mobile) */
-.welcome-content-col {
-  order: 2;
-  position: relative;
   z-index: 10;
-  margin-top: -28px;
+  gap: 8px;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  letter-spacing: -0.01em;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.status-pill-dark {
+  background: rgba(30, 41, 59, 0.82);
+  color: #f8fafc;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-accent-green);
+  box-shadow: 0 0 8px var(--color-accent-green);
+  animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
+}
+
+.status-pill-light {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--color-text-dark);
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.uppercase {
+  letter-spacing: 0.05em;
+  font-size: 0.75rem;
+}
+
+/* ==========================================================================
+   Bottom Sheet Modal Card
+   ========================================================================== */
+.bottom-sheet-card {
+  position: relative;
+  z-index: 20;
+  margin-top: -36px;
   background: #ffffff;
-  border-top-left-radius: 32px;
-  border-top-right-radius: 32px;
-  padding: 14px 22px 36px 22px;
-  box-shadow: 0 -10px 35px rgba(0, 0, 0, 0.08);
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  padding: 14px 24px 32px 24px;
+  box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.06);
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  flex: 1;
 }
 
-.drag-handle-bar {
-  width: 42px;
-  height: 4px;
-  background: #cbd5e1;
-  border-radius: 4px;
-  margin: 0 auto 18px auto;
+.drag-handle {
+  width: 44px;
+  height: 5px;
+  background-color: #cbd5e1;
+  border-radius: var(--radius-full);
+  margin: 0 auto 20px auto;
 }
 
-/* Badge Row */
-.sheet-badge-row {
+.brand-row {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 12px;
+  margin-bottom: 18px;
 }
 
-.sheet-logo-circle {
-  width: 44px;
-  height: 44px;
-  border-radius: 14px;
-  background: var(--primary);
-  color: #ffffff;
+.brand-icon-box {
+  width: 42px;
+  height: 42px;
+  background: linear-gradient(135deg, #006837 0%, #008744 100%);
+  border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(8, 109, 56, 0.3);
+  box-shadow: 0 4px 10px rgba(0, 104, 55, 0.25);
 }
 
-.sheet-logo-circle svg {
-  width: 24px;
-  height: 24px;
-}
-
-.sheet-badge-text {
+.brand-text {
   display: flex;
   flex-direction: column;
 }
 
-.sheet-badge-brand {
-  font-size: 15px;
-  font-weight: 800;
-  color: #0f172a;
-  display: flex;
-  align-items: center;
-  gap: 6px;
+.brand-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
 }
 
-.sheet-badge-brand::after {
-  content: "•";
-  color: var(--accent-emerald);
+.brand-dot {
+  color: var(--color-accent-green);
 }
 
-.sheet-badge-category {
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.8px;
-  color: #64748b;
-  text-transform: uppercase;
+.brand-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  letter-spacing: 0.08em;
 }
 
-/* Headings */
-.sheet-title-group {
-  margin-bottom: 8px;
-}
-
-.sheet-title-main {
-  font-size: clamp(1.75rem, 5vw, 2.5rem);
-  font-weight: 800;
-  color: #0f172a;
-  line-height: 1.12;
-  letter-spacing: -0.8px;
-}
-
-.sheet-title-sub {
-  font-size: clamp(1.75rem, 5vw, 2.5rem);
-  font-weight: 800;
-  color: var(--primary);
-  line-height: 1.12;
-  letter-spacing: -0.8px;
-}
-
-.sheet-description {
-  font-size: 14.5px;
-  color: var(--text-secondary);
-  line-height: 1.5;
+.hero-typography {
   margin-bottom: 24px;
-  max-width: var(--max-text-width);
 }
 
-/* Call to Action Button */
-.sheet-action {
-  margin-bottom: 26px;
+.main-heading {
+  font-size: 1.65rem;
+  font-weight: 800;
+  line-height: 1.25;
+  color: var(--color-text-dark);
+  letter-spacing: -0.02em;
+  margin-bottom: 10px;
 }
 
-.sheet-btn-start {
+.highlight-green {
+  color: var(--color-primary);
+}
+
+.sub-description {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  font-weight: 450;
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   Primary Action Button
+   ========================================================================== */
+.cta-action {
+  margin-bottom: 28px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: 600;
+  border-radius: var(--radius-md);
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  width: 100%;
+  padding: 16px 24px;
+  font-size: 1.05rem;
+  box-shadow: var(--shadow-lg);
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  width: 100%;
-  padding: 16px 24px;
-  background: var(--primary);
-  color: #ffffff;
-  border-radius: 16px;
-  font-size: 16.5px;
-  font-weight: 800;
-  text-decoration: none;
-  box-shadow: 0 8px 22px rgba(8, 109, 56, 0.35);
-  transition: all var(--transition-normal);
 }
 
-.sheet-btn-start:hover {
-  background: var(--primary-hover);
+.btn-primary:hover {
+  background-color: var(--color-primary-hover);
   transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(8, 109, 56, 0.45);
+  box-shadow: 0 14px 28px rgba(0, 104, 55, 0.28);
 }
 
-.sheet-btn-start svg {
-  width: 20px;
-  height: 20px;
-  transition: transform var(--transition-fast);
+.btn-primary:active {
+  transform: translateY(0);
 }
 
-.sheet-btn-start:hover svg {
+.btn-arrow {
+  transition: transform 0.2s ease;
+}
+
+.btn-primary:hover .btn-arrow {
   transform: translateX(4px);
 }
 
-/* 3-Column Benefits Row */
-.sheet-features-row {
+/* ==========================================================================
+   Value Props 3-Column Grid
+   ========================================================================== */
+.value-props-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  padding-top: 16px;
+  gap: 12px;
+  padding-top: 14px;
   border-top: 1px solid #f1f5f9;
 }
 
-.feature-pill-card {
+.prop-item {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 6px;
+  gap: 8px;
 }
 
-.feature-icon-circle {
-  width: 34px;
-  height: 34px;
-  border-radius: 10px;
-  background: #f0fdf4;
+.prop-icon-wrapper {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-primary-tint);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--primary);
 }
 
-.feature-icon-circle svg {
-  width: 20px;
-  height: 20px;
-}
-
-.feature-label {
-  font-size: 10.5px;
-  font-weight: 700;
-  color: #1e293b;
+.prop-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--color-text-dark);
   line-height: 1.3;
 }
 
-
 /* ==========================================================================
-   2. TABLET BREAKPOINT (768px to 1024px)
+   Responsive Breakpoints: Tablet (600px - 1024px)
    ========================================================================== */
-@media (min-width: 768px) and (max-width: 1024px) {
-  .welcome-screen {
-    background-color: var(--bg-page);
-    justify-content: center;
-    padding: 32px 24px;
+@media (min-width: 600px) {
+  body {
+    padding: 32px 16px;
+    background: linear-gradient(135deg, #e9ecef 0%, #d8e2dc 100%);
   }
 
-  .welcome-hero-wrap {
-    min-height: auto;
-    max-width: 820px;
-    margin: 0 auto;
-    gap: 24px;
+  .app-viewport {
+    border-radius: var(--radius-xl);
+    min-height: calc(100vh - 64px);
+    height: 840px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
   }
 
-  .drag-handle-bar {
-    display: none;
+  .hero-image-wrapper {
+    height: 48vh;
   }
 
-  /* Mid-size Tablet: Stacked with comfortable breathing room */
-  .welcome-visual-col {
-    height: 340px;
-    min-height: 340px;
-    border-radius: 28px;
-    overflow: hidden;
-    box-shadow: var(--shadow-lg);
-  }
-
-  .hero-img {
-    object-position: center;
-  }
-
-  .hero-floating-badges {
-    top: 20px;
-    left: 20px;
-    right: 20px;
-  }
-
-  .stat-pill-dark {
-    padding: 10px 18px;
-    font-size: 12.5px;
-  }
-
-  .stat-pill-light {
-    padding: 10px 18px;
-    font-size: 12px;
-  }
-
-  .welcome-content-col {
-    margin-top: 0;
-    border-radius: 28px;
-    padding: 36px;
-    box-shadow: var(--shadow-md);
-    border: 1px solid #e2e8f0;
-  }
-
-  .sheet-title-main,
-  .sheet-title-sub {
-    font-size: 32px;
-  }
-
-  .sheet-description {
-    font-size: 16px;
-  }
-
-  .sheet-btn-start {
-    max-width: 320px;
-  }
-
-  .sheet-features-row {
-    gap: 16px;
-    padding-top: 20px;
-  }
-
-  .feature-pill-card {
-    padding: 12px 10px;
-    background: #f8fafc;
-    border-radius: 14px;
-    border: 1px solid #e2e8f0;
-  }
-
-  .feature-label {
-    font-size: 11.5px;
+  .bottom-sheet-card {
+    padding: 24px 28px 36px 28px;
   }
 }
 
-/* Wide Tablet Orientation (900px to 1024px): 2-Column Grid */
-@media (min-width: 900px) and (max-width: 1024px) {
-  .welcome-hero-wrap {
-    display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
-    gap: 32px;
-    align-items: center;
-    max-width: 980px;
-  }
-
-  .welcome-content-col {
-    order: 1;
-    height: 100%;
-  }
-
-  .welcome-visual-col {
-    order: 2;
-    height: 100%;
-    min-height: 480px;
-  }
-}
-
-
 /* ==========================================================================
-   3. LAPTOP & DESKTOP BREAKPOINT (1025px and Above)
+   Responsive Breakpoints: Laptop / Desktop (> 1024px)
    ========================================================================== */
-@media (min-width: 1025px) {
-  .welcome-screen {
-    background: radial-gradient(circle at 85% 20%, #e8f5e9 0%, #f8fafc 50%, #f1f5f9 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 48px 32px;
+@media (min-width: 1024px) {
+  body {
+    background: radial-gradient(circle at top right, #e2e8f0, #cbd5e1);
   }
 
-  .welcome-hero-wrap {
-    display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: 64px;
-    align-items: center;
-    max-width: 1280px;
-    width: 100%;
-    margin: 0 auto;
-    min-height: auto;
+  .app-viewport {
+    max-width: 440px;
+    transition: transform 0.3s ease;
   }
 
-  /* Left Column: Hero Content */
-  .welcome-content-col {
-    order: 1;
-    background: transparent;
-    border-radius: 0;
-    box-shadow: none;
-    padding: 0;
-    margin-top: 0;
-  }
-
-  .drag-handle-bar {
-    display: none;
-  }
-
-  /* Brand Badge Container */
-  .sheet-badge-row {
-    background: #ecfdf5;
-    border: 1px solid #bbf7d0;
-    padding: 8px 16px;
-    border-radius: var(--radius-full);
-    width: fit-content;
-    margin-bottom: 24px;
-  }
-
-  .sheet-logo-circle {
-    width: 36px;
-    height: 36px;
-    border-radius: 10px;
-  }
-
-  .sheet-logo-circle svg {
-    width: 20px;
-    height: 20px;
-  }
-
-  .sheet-badge-brand {
-    font-size: 15px;
-  }
-
-  .sheet-badge-category {
-    font-size: 11px;
-    color: #065f46;
-  }
-
-  /* Hero Headings */
-  .sheet-title-group {
-    margin-bottom: 16px;
-  }
-
-  .sheet-title-main {
-    font-size: clamp(2.8rem, 4.2vw, 4.4rem);
-    letter-spacing: -1.5px;
-    line-height: 1.05;
-  }
-
-  .sheet-title-sub {
-    font-size: clamp(2.8rem, 4.2vw, 4.4rem);
-    letter-spacing: -1.5px;
-    line-height: 1.05;
-  }
-
-  .sheet-description {
-    font-size: 18px;
-    color: #475569;
-    line-height: 1.6;
-    margin-bottom: 36px;
-    max-width: 48ch;
-  }
-
-  /* Call to Action Button */
-  .sheet-action {
-    margin-bottom: 44px;
-  }
-
-  .sheet-btn-start {
-    display: inline-flex;
-    width: auto;
-    padding: 18px 36px;
-    font-size: 18px;
-    border-radius: 18px;
-    box-shadow: 0 12px 28px rgba(8, 109, 56, 0.35);
-  }
-
-  .sheet-btn-start:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 16px 36px rgba(8, 109, 56, 0.45);
-  }
-
-  /* 3 Features Horizontal Card Grid */
-  .sheet-features-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    padding-top: 28px;
-    border-top: 1px solid #e2e8f0;
-    max-width: 620px;
-  }
-
-  .feature-pill-card {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    text-align: left;
-    gap: 12px;
-    padding: 12px 14px;
-    background: #ffffff;
-    border-radius: 16px;
-    border: 1px solid #e2e8f0;
-    box-shadow: var(--shadow-sm);
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-  }
-
-  .feature-pill-card:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-    border-color: #bbf7d0;
-  }
-
-  .feature-icon-circle {
-    width: 38px;
-    height: 38px;
-    min-width: 38px;
-    border-radius: 10px;
-    background: #ecfdf5;
-  }
-
-  .feature-icon-circle svg {
-    width: 22px;
-    height: 22px;
-  }
-
-  .feature-label {
-    font-size: 12px;
-    font-weight: 700;
-    color: #0f172a;
-    line-height: 1.3;
-  }
-
-  /* Right Column: Hero Visual Showcase */
-  .welcome-visual-col {
-    order: 2;
-    height: 100%;
-    min-height: 520px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .hero-image-card {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 4 / 3.4;
-    min-height: 520px;
-    border-radius: 36px;
-    overflow: hidden;
-    box-shadow: 
-      0 25px 60px -15px rgba(15, 23, 42, 0.25),
-      0 0 0 1px rgba(255, 255, 255, 0.8) inset;
-  }
-
-  .hero-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .hero-image-card:hover .hero-img {
-    transform: scale(1.03);
-  }
-
-  .hero-image-overlay {
-    background: linear-gradient(
-      to top,
-      rgba(15, 23, 42, 0.45) 0%,
-      rgba(15, 23, 42, 0.05) 50%,
-      rgba(15, 23, 42, 0.3) 100%
-    );
-  }
-
-  .hero-floating-badges {
-    position: absolute;
-    inset: 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    z-index: 5;
-    pointer-events: none;
-  }
-
-  .stat-pill-dark {
-    pointer-events: auto;
-    padding: 10px 18px;
-    font-size: 13px;
-    background: rgba(15, 23, 42, 0.85);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-  }
-
-  .stat-pill-light {
-    pointer-events: auto;
-    padding: 10px 18px;
-    font-size: 12px;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  .app-viewport:hover {
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
   }
 }

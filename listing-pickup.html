@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SurplusLink - Fast Listing (Step 2 of 2)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="listing-pickup.css">
+</head>
+<body>
+  <!-- Prototype Navigation Drawer for Instant Screen Switching -->
+  <input type="checkbox" id="nav-drawer-toggle" class="drawer-toggle">
+  <label for="nav-drawer-toggle" class="drawer-trigger" title="All App Screens Menu">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    <span>App Screens</span>
+  </label>
+  <div class="drawer-overlay">
+    <label for="nav-drawer-toggle" class="drawer-backdrop"></label>
+    <nav class="drawer-menu">
+      <div class="drawer-header">
+        <h3>SurplusLink Architecture</h3>
+        <label for="nav-drawer-toggle" class="drawer-close">&times;</label>
+      </div>
+      <div class="drawer-links">
+        <a href="index.html">1. Welcome Onboarding</a>
+        <a href="role-selection.html">2. Role Selection (3 States)</a>
+        <a href="login.html">3. Login & Sign Up (Provider/Recipient)</a>
+        <a href="signup.html">4. Create Account Form</a>
+        <a href="explore.html">5. Tactical Feed & Explore</a>
+        <a href="radar.html">6. Live Radar & Tactical Map</a>
+        <a href="safety-detail.html">7. Safety & Cold-Chain Protocol</a>
+        <a href="claim-review.html">8. Claim & Reserve Review</a>
+        <a href="reservation-pass.html">9. Active Dispatch Pass & QR</a>
+        <a href="call.html">10. E2EE Dispatch In-App Call</a>
+        <a href="cancel-reservation.html">11. Cancel Reservation / Ledger</a>
+        <a href="compliance-audit.html">12. Compliance & Audit (FDA/HACCP)</a>
+        <a href="list-food.html">13. List Food - Item Details</a>
+        <a href="listing-pickup.html" class="active">14. Fast Listing - Pickup & Dock</a>
+        <a href="alerts.html">15. Tactical Alerts & Verification</a>
+        <a href="queue.html">16. Live Pickup Queue</a>
+        <a href="impact.html">17. Bakery Impact Hub & Ledger</a>
+        <a href="profile.html">18. Profile & Operations Hub</a>
+      </div>
+    </nav>
+  </div>
+
+  <div class="app-viewport">
+    <main class="pickup-flow-screen">
+      <!-- App Header -->
+      <header class="app-header">
+        <a href="list-food.html" class="icon-nav-btn" aria-label="Go back">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+        </a>
+
+        <div class="header-center-info">
+          <div class="header-title-row">
+            <h1 class="header-title">Fast Listing Flow</h1>
+            <span class="badge-verified">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>VERIFIED</span>
+            </span>
+          </div>
+          <span class="header-protocol-sub">SurplusLink Protocol</span>
+        </div>
+
+        <a href="explore.html" class="icon-nav-btn" aria-label="Close">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </a>
+      </header>
+
+      <!-- Step Indicator Bar -->
+      <div class="step-indicator-bar">
+        <div class="step-circle">2</div>
+        <div class="step-text-col">
+          <span class="step-counter-tag">STEP 2 OF 2</span>
+          <strong class="step-main-title">Pickup Window &amp; Access</strong>
+        </div>
+        <span class="batch-spec-pill">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"></path></svg>
+          <span>18 portions • Bakery</span>
+        </span>
+      </div>
+
+      <!-- Scheduled Rescue Banner -->
+      <section class="scheduled-banner-card">
+        <div class="scheduled-top-row">
+          <span class="scheduled-tag">● Scheduled Rescue</span>
+          <div class="clock-icon-circle">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#008744" stroke-width="2.2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </div>
+        </div>
+
+        <h2 class="arrive-time-title">Arrive between 8:30 PM and 9:00 PM.</h2>
+        <p class="bag-reminder-text">Bring your own bag.</p>
+
+        <!-- Timeline Graphic Bar -->
+        <div class="timeline-visual-card">
+          <div class="timeline-labels-row">
+            <span>8:30 PM (Window Opens)</span>
+            <span class="text-amber">8:55 PM (Cutoff)</span>
+            <span>9:00 PM (Closing)</span>
+          </div>
+          <div class="timeline-bar-track">
+            <div class="timeline-bar-green" style="width: 75%;"></div>
+            <div class="timeline-bar-amber" style="width: 25%;"></div>
+          </div>
+          <div class="timeline-footer-row">
+            <span class="active-window-indicator">✓ Active Handover Window</span>
+            <span class="buffer-text">⏱ 5m Buffer</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Select Pickup Time Window -->
+      <section class="time-window-section">
+        <div class="section-title-row">
+          <strong class="section-head-title">Select Pickup Time Window</strong>
+          <span class="pst-text">Local Time (PST)</span>
+        </div>
+
+        <form class="time-window-form">
+          <!-- Window 1 -->
+          <label class="time-option-card">
+            <div class="time-option-left">
+              <div class="option-icon-box">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#008744" stroke-width="2">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+              </div>
+              <div class="option-text-col">
+                <strong class="option-title">Immediate Rescue</strong>
+                <span class="option-sub">Next 45 mins • Best for rapid distribution</span>
+              </div>
+            </div>
+            <input type="radio" name="pickup_window" class="option-radio">
+            <span class="radio-visual"></span>
+          </label>
+
+          <!-- Window 2 (Recommended & Checked) -->
+          <label class="time-option-card option-checked">
+            <div class="time-option-left">
+              <div class="option-icon-box icon-box-active">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#008744" stroke-width="2">
+                  <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+                  <line x1="2" y1="10" x2="22" y2="10"></line>
+                </svg>
+              </div>
+              <div class="option-text-col">
+                <div class="option-title-row">
+                  <strong class="option-title">Dinner Rescue</strong>
+                  <span class="badge-rec">Recommended</span>
+                </div>
+                <span class="option-sub">5:30 PM – 7:30 PM • Maximum volunteer reach</span>
+              </div>
+            </div>
+            <input type="radio" name="pickup_window" checked class="option-radio">
+            <span class="radio-visual"></span>
+          </label>
+
+          <!-- Window 3 -->
+          <label class="time-option-card">
+            <div class="time-option-left">
+              <div class="option-icon-box">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#008744" stroke-width="2">
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+              </div>
+              <div class="option-text-col">
+                <strong class="option-title">Closing Window</strong>
+                <span class="option-sub">9:00 PM – 10:00 PM • End-of-shift handover</span>
+              </div>
+            </div>
+            <input type="radio" name="pickup_window" class="option-radio">
+            <span class="radio-visual"></span>
+          </label>
+
+          <!-- Window 4 -->
+          <label class="time-option-card">
+            <div class="time-option-left">
+              <div class="option-icon-box">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#008744" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+              </div>
+              <div class="option-text-col">
+                <strong class="option-title">Custom Window</strong>
+                <span class="option-sub">Set custom start and cutoff deadlines</span>
+              </div>
+            </div>
+            <input type="radio" name="pickup_window" class="option-radio">
+            <span class="radio-visual"></span>
+          </label>
+        </form>
+      </section>
+
+      <!-- Access & Dock Directives -->
+      <section class="dock-directives-section">
+        <div class="section-title-row">
+          <div class="dock-head-left">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#008744" stroke-width="2">
+              <path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <strong class="section-head-title">Access &amp; Dock Directives</strong>
+          </div>
+          <span class="badge-courier-ready">Courier Ready</span>
+        </div>
+
+        <!-- Dock Photo with Location Stamp -->
+        <div class="dock-photo-card">
+          <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80" alt="Bakery delivery dock #3" class="dock-img">
+          <div class="dock-stamp-bar">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"></path></svg>
+            <span>1420 Pike Place, Seattle • Artisan Bakery Co.</span>
+          </div>
+        </div>
+
+        <!-- Select Pickup Door Option -->
+        <div class="door-options-group">
+          <span class="sub-label">SELECT PICKUP DOOR OPTION</span>
+
+          <!-- Door 1 (Checked) -->
+          <label class="door-option-card door-checked">
+            <div class="door-icon-box">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#008744" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                <line x1="9" y1="3" x2="9" y2="21"></line>
+              </svg>
+            </div>
+            <div class="door-info">
+              <strong class="door-title">Main Bakery Front Entrance</strong>
+              <span class="door-sub">Glass door on Pike St • Ring front service bell</span>
+            </div>
+            <input type="radio" name="pickup_door" checked class="door-radio">
+            <span class="radio-visual"></span>
+          </label>
+
+          <!-- Door 2 -->
+          <label class="door-option-card">
+            <div class="door-icon-box">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2">
+                <rect x="1" y="3" width="15" height="13"></rect>
+                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+              </svg>
+            </div>
+            <div class="door-info">
+              <strong class="door-title">Side Delivery Door / Alley</strong>
+              <span class="door-sub">Back alley delivery dock Door #3 • Direct kitchen access</span>
+            </div>
+            <input type="radio" name="pickup_door" class="door-radio">
+            <span class="radio-visual"></span>
+          </label>
+        </div>
+
+        <!-- Packaging Reminder Box -->
+        <div class="packaging-reminder-card">
+          <div class="remind-icon-box">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#008744" stroke-width="2">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+            </svg>
+          </div>
+          <div>
+            <strong class="remind-title">Packaging Reminder</strong>
+            <span class="remind-sub">Bring your own bag or certified clean container</span>
+          </div>
+        </div>
+
+        <!-- Head Baker Staff Lead Card -->
+        <div class="staff-lead-card">
+          <div class="staff-info-row">
+            <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=120&q=80" alt="Marco" class="staff-avatar">
+            <div>
+              <strong class="staff-name">Head Baker Marco</strong>
+              <span class="staff-status">Bakery Staff Lead • On Duty Now</span>
+            </div>
+          </div>
+          <a href="call.html" class="btn-call-staff">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            <span>Call Bakery Staff (Head Baker Marco)</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Protocol Automated Routing Rule Notice -->
+      <section class="routing-rule-notice">
+        <div class="rule-icon-box">@</div>
+        <div class="rule-text-block">
+          <strong class="rule-title">Protocol Automated Routing Rule</strong>
+          <p class="rule-body">
+            Unclaimed items auto-reassigned 30 mins prior to batch expiry to nearest rapid shelter dispatch. Zero edible waste tolerance.
+          </p>
+        </div>
+      </section>
+
+      <!-- Submit & Publish Live Listing Button -->
+      <div class="submit-listing-block">
+        <a href="queue.html" class="btn-publish-listing">
+          <span>Publish Live Listing &amp; Alert Verified Recipients</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+        <div class="broadcast-cert-row">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008744" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          <span>Instant broadcast to 14 verified shelters &amp; couriers in 2.4 mi</span>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

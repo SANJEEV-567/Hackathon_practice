@@ -3,323 +3,431 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Active Dispatch Pass - SurplusLink</title>
-  <link rel="stylesheet" href="common.css">
-  <link rel="stylesheet" href="reservation-pass.css">
+  <title>SurplusLink - Active Dispatch Pass</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="reservation-pass.css">
 </head>
 <body>
-  <div class="app-container pass-screen">
-    <!-- Status Bar -->
-    <header class="device-status-bar" style="background: #ffffff;">
-      <span class="time">9:41</span>
-      <div class="icons">
-        <svg viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.9-1.9C9.28 19.64 10.59 20 12 20c4.97 0 9-4.03 9-9s-4.03-9-9-9zm0 15c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/></svg>
-        <svg viewBox="0 0 24 24"><path d="M12 4C7.31 4 3.07 5.9 0 8.98L12 21 24 8.98C20.93 5.9 16.69 4 12 4z"/></svg>
-        <svg viewBox="0 0 24 24"><path d="M17 4h-3V2h-4v2H7v18h10V4z"/></svg>
+  <!-- Prototype Navigation Drawer for Instant Screen Switching -->
+  <input type="checkbox" id="nav-drawer-toggle" class="drawer-toggle">
+  <label for="nav-drawer-toggle" class="drawer-trigger" title="All App Screens Menu">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    <span>App Screens</span>
+  </label>
+  <div class="drawer-overlay">
+    <label for="nav-drawer-toggle" class="drawer-backdrop"></label>
+    <nav class="drawer-menu">
+      <div class="drawer-header">
+        <h3>SurplusLink Architecture</h3>
+        <label for="nav-drawer-toggle" class="drawer-close">&times;</label>
       </div>
-    </header>
+      <div class="drawer-links">
+        <a href="index.html">1. Welcome Onboarding</a>
+        <a href="role-selection.html">2. Role Selection (3 States)</a>
+        <a href="login.html">3. Login & Sign Up (Provider/Recipient)</a>
+        <a href="signup.html">4. Create Account Form</a>
+        <a href="explore.html">5. Tactical Feed & Explore</a>
+        <a href="radar.html">6. Live Radar & Tactical Map</a>
+        <a href="safety-detail.html">7. Safety & Cold-Chain Protocol</a>
+        <a href="claim-review.html">8. Claim & Reserve Review</a>
+        <a href="reservation-pass.html" class="active">9. Active Dispatch Pass & QR</a>
+        <a href="call.html">10. E2EE Dispatch In-App Call</a>
+        <a href="cancel-reservation.html">11. Cancel Reservation / Ledger</a>
+        <a href="compliance-audit.html">12. Compliance & Audit (FDA/HACCP)</a>
+        <a href="list-food.html">13. List Food - Item Details</a>
+        <a href="listing-pickup.html">14. Fast Listing - Pickup & Dock</a>
+        <a href="alerts.html">15. Tactical Alerts & Verification</a>
+        <a href="queue.html">16. Live Pickup Queue</a>
+        <a href="impact.html">17. Bakery Impact Hub & Ledger</a>
+        <a href="profile.html">18. Profile & Operations Hub</a>
+      </div>
+    </nav>
+  </div>
 
-    <!-- Top App Header -->
-    <header class="app-header">
-      <div class="header-left">
-        <a href="explore.html" class="header-brand">
-          <div class="brand-icon-box">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+  <div class="app-viewport">
+    <main class="reservation-screen">
+      <!-- App Header -->
+      <header class="tactical-header">
+        <div class="header-brand-block">
+          <div class="brand-logo-mini">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#008744">
               <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
             </svg>
           </div>
-          <div class="brand-text-wrap">
+          <div class="brand-text-stack">
             <span class="brand-title">SurplusLink</span>
             <span class="brand-subtitle">Tactical Food Rescue</span>
           </div>
-        </a>
-      </div>
+        </div>
 
-      <div class="header-right">
-        <a href="radar.html" class="live-radar-pill">
-          <span class="pulse-dot"></span>
-          <span>LIVE RADAR</span>
-        </a>
-        <a href="alerts-feed.html" class="btn-icon" aria-label="Notifications">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+        <div class="header-tactical-actions">
+          <a href="radar.html" class="live-radar-pill">
+            <span class="pulse-dot"></span>
+            <span>LIVE RADAR</span>
+          </a>
+
+          <a href="alerts.html" class="icon-bubble-btn" aria-label="Alerts">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+            <span class="alert-counter-badge">3</span>
+          </a>
+
+          <a href="profile.html" class="avatar-profile-link" aria-label="Profile">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=80&q=80" alt="Active user avatar" class="avatar-img">
+          </a>
+        </div>
+      </header>
+
+      <!-- Active Dispatch Pass Banner -->
+      <section class="dispatch-banner-card">
+        <div class="banner-top-row">
+          <span class="dispatch-status">● ACTIVE DISPATCH PASS</span>
+          <span class="claim-tag">CLAIM #SL-8842</span>
+        </div>
+        <h1 class="confirmation-title">Reservation Confirmed</h1>
+        <div class="pickup-window-row">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
           </svg>
-          <span class="badge-dot">3</span>
-        </a>
-        <a href="profile.html" class="user-avatar-btn" aria-label="User Profile">
-          <img src="https://images.unsplash.com/photo-1583394293214-28ded15ee548?auto=format&fit=crop&w=120&q=80" alt="Michael Vance">
-        </a>
-      </div>
-    </header>
-
-    <!-- Main Content Area -->
-    <main class="pass-content">
-      <!-- Active Pass Badge -->
-      <div class="active-dispatch-banner">
-        <span>● ACTIVE DISPATCH PASS</span>
-        <span class="claim-code-pill">CLAIM #SL-8842</span>
-      </div>
-
-      <div class="pass-header-group">
-        <h1 class="pass-main-title">Reservation Confirmed</h1>
-        <div class="pass-pickup-sub">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
           <span>Pickup window: 5:30 PM – 7:30 PM</span>
         </div>
-      </div>
 
-      <!-- Live Countdown Card -->
-      <article class="countdown-card">
-        <div class="countdown-left">
-          <span class="countdown-icon">⏱</span>
-          <div>
-            <div class="countdown-label">Window Closes In</div>
-            <div class="countdown-timer-val">01:44:51</div>
+        <div class="countdown-priority-strip">
+          <div class="countdown-box">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#008744" stroke-width="2.2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            <div>
+              <span class="countdown-label">Window Closes In</span>
+              <strong class="countdown-timer">01:44:51</strong>
+            </div>
           </div>
+          <span class="priority-lane-badge">⚡ Priority Lane</span>
         </div>
-        <div class="priority-lane-badge">
-          <span>⚡ Priority Lane</span>
-        </div>
-      </article>
+      </section>
 
       <!-- Payment & Impact Summary -->
-      <article class="summary-card">
-        <div class="summary-header-row">
-          <div class="summary-title">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#086d38" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
-            <span>Payment &amp; Impact Summary</span>
+      <section class="summary-card">
+        <div class="summary-header">
+          <div class="summary-title-block">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#008744" stroke-width="2">
+              <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+              <line x1="2" y1="10" x2="22" y2="10"></line>
+            </svg>
+            <h2 class="summary-title">Payment &amp; Impact Summary</h2>
           </div>
-          <span class="badge badge-green">Paid Online</span>
+          <span class="paid-online-badge">✓ Paid Online</span>
         </div>
 
-        <div class="summary-split-grid">
-          <div class="summary-metric-box">
-            <div class="summary-metric-label">Surplus Rescue Price</div>
-            <div class="summary-metric-value">$6.50</div>
-            <div class="summary-metric-sub">Original: $34.00</div>
+        <div class="summary-metrics-grid">
+          <div class="metric-item">
+            <span class="metric-label">Surplus Rescue Price</span>
+            <strong class="metric-val">$6.50</strong>
+            <span class="metric-sub">Original: $34.00</span>
           </div>
-          <div class="summary-metric-box">
-            <div class="summary-metric-label">Rescuer Savings</div>
-            <div class="summary-metric-value" style="color: #059669;">$27.50</div>
-            <div class="summary-metric-sub">81% Saved</div>
+
+          <div class="metric-item">
+            <span class="metric-label">Rescuer Savings</span>
+            <strong class="metric-val text-green">$27.50</strong>
+            <span class="metric-sub text-green-bold">81% Saved</span>
           </div>
         </div>
 
-        <div class="summary-footer-meta">
-          <span>🔒 Payment Status: Reserved &amp; Paid Online</span>
-          <span>Receipt #REC-8902</span>
+        <div class="summary-footer-row">
+          <span class="pay-status">🔒 Payment Status: Reserved &amp; Paid Online</span>
+          <span class="receipt-id">Receipt #REC-8902</span>
         </div>
-      </article>
+      </section>
 
-      <!-- Scannable Crypto Rescue Token -->
-      <article class="qr-token-card">
-        <div class="qr-header-row">
-          <div class="qr-title">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#086d38" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-            <span>Crypto Rescue Token</span>
+      <!-- Crypto Rescue Token (QR & PIN) -->
+      <section class="crypto-token-card">
+        <div class="token-header">
+          <div class="token-title-row">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#008744" stroke-width="2.5">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+            <h2 class="token-title">Crypto Rescue Token</h2>
           </div>
-          <span class="badge badge-gray">Single-Use</span>
+          <span class="single-use-badge">Single-Use</span>
         </div>
 
-        <!-- High-contrast Scannable Vector QR Code -->
-        <div class="qr-code-box">
-          <svg width="160" height="160" viewBox="0 0 100 100" fill="#0f172a">
-            <!-- QR Corner Finders -->
-            <path d="M10,10 h30 v30 h-30 z M15,15 h20 v20 h-20 z M20,20 h10 v10 h-10 z" />
-            <path d="M60,10 h30 v30 h-30 z M65,15 h20 v20 h-20 z M70,20 h10 v10 h-10 z" />
-            <path d="M10,60 h30 v30 h-30 z M15,65 h20 v20 h-20 z M20,70 h10 v10 h-10 z" />
-            <!-- Data Grid Cells -->
-            <rect x="46" y="12" width="8" height="8" />
-            <rect x="46" y="24" width="8" height="8" />
-            <rect x="12" y="46" width="8" height="8" />
-            <rect x="24" y="46" width="8" height="8" />
-            <rect x="65" y="46" width="8" height="8" />
-            <rect x="78" y="46" width="10" height="8" />
-            <rect x="46" y="65" width="8" height="8" />
-            <rect x="46" y="78" width="8" height="10" />
-            <rect x="65" y="65" width="10" height="10" />
-            <rect x="80" y="78" width="8" height="8" />
+        <!-- Simulated Scalable SVG QR Code with Center Checkmark -->
+        <div class="qr-code-wrapper">
+          <svg class="qr-svg" width="180" height="180" viewBox="0 0 100 100">
+            <!-- Background -->
+            <rect width="100" height="100" fill="#ffffff" rx="10" />
+            <!-- Corners Position Markers -->
+            <!-- Top Left -->
+            <rect x="10" y="10" width="24" height="24" fill="#111827" rx="3" />
+            <rect x="14" y="14" width="16" height="16" fill="#ffffff" rx="2" />
+            <rect x="18" y="18" width="8" height="8" fill="#111827" />
+            <!-- Top Right -->
+            <rect x="66" y="10" width="24" height="24" fill="#111827" rx="3" />
+            <rect x="70" y="14" width="16" height="16" fill="#ffffff" rx="2" />
+            <rect x="74" y="18" width="8" height="8" fill="#111827" />
+            <!-- Bottom Left -->
+            <rect x="10" y="66" width="24" height="24" fill="#111827" rx="3" />
+            <rect x="14" y="70" width="16" height="16" fill="#ffffff" rx="2" />
+            <rect x="18" y="74" width="8" height="8" fill="#111827" />
+            <!-- Random Data Matrix Grid Blocks -->
+            <rect x="40" y="12" width="6" height="6" fill="#111827" />
+            <rect x="52" y="12" width="6" height="6" fill="#111827" />
+            <rect x="44" y="24" width="6" height="6" fill="#111827" />
+            <rect x="56" y="24" width="6" height="6" fill="#111827" />
+            <rect x="12" y="42" width="6" height="6" fill="#111827" />
+            <rect x="24" y="42" width="6" height="6" fill="#111827" />
+            <rect x="18" y="52" width="6" height="6" fill="#111827" />
+            <rect x="74" y="42" width="6" height="6" fill="#111827" />
+            <rect x="82" y="52" width="6" height="6" fill="#111827" />
+            <rect x="40" y="68" width="6" height="6" fill="#111827" />
+            <rect x="52" y="76" width="6" height="6" fill="#111827" />
+            <rect x="66" y="72" width="6" height="6" fill="#111827" />
+            <rect x="78" y="82" width="6" height="6" fill="#111827" />
+            <!-- Center Token Verified Shield Badge -->
+            <circle cx="50" cy="50" r="14" fill="#008744" stroke="#ffffff" stroke-width="3" />
+            <path d="M44 50 L48 54 L56 46" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
-          <div class="qr-center-shield">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </div>
+
+        <p class="scan-instruction">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <span>Screen auto-brightens on staff scanner interaction</span>
+        </p>
+
+        <!-- Backup PIN Box -->
+        <div class="pin-box">
+          <span class="pin-label">KITCHEN TERMINAL BACKUP PIN</span>
+          <div class="pin-number-row">
+            <strong class="pin-val">482 – 910</strong>
+            <button type="button" class="btn-copy-pin" title="Copy PIN">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+            </button>
           </div>
         </div>
 
-        <div class="qr-scanner-hint">
-          <span>💡 Screen auto-brightens on staff scanner interaction</span>
-        </div>
-
-        <div class="pin-terminal-box">
-          <div class="pin-label">Kitchen Terminal Backup PIN</div>
-          <div class="pin-display-row">
-            <span class="pin-digits">482 — 910</span>
-            <a href="#copied" class="btn-copy-pin" title="Copy PIN">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-            </a>
-          </div>
-        </div>
-
-        <div class="qr-actions-row">
-          <a href="#expand" class="btn-secondary" style="font-size: 12px; padding: 10px;">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+        <div class="token-actions-row">
+          <button type="button" class="btn-token-action">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <polyline points="9 21 3 21 3 15"></polyline>
+              <line x1="21" y1="3" x2="14" y2="10"></line>
+              <line x1="3" y1="21" x2="10" y2="14"></line>
+            </svg>
             <span>Expand Code</span>
-          </a>
-          <a href="#staff-view" class="btn-secondary" style="font-size: 12px; padding: 10px; background: #ecfdf5; border-color: #a7f3d0; color: #065f46;">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+          </button>
+          <button type="button" class="btn-token-action">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+            </svg>
             <span>Staff View</span>
-          </a>
+          </button>
         </div>
-      </article>
+      </section>
 
       <!-- Donor Kitchen Details -->
-      <article class="donor-card">
-        <div class="donor-top-header">
-          <div>
-            <div style="font-size: 10.5px; font-weight: 800; color: #086d38; text-transform: uppercase;">Donor Kitchen</div>
-            <h2 class="donor-meta-name">Green Garden Bistro</h2>
-            <div style="font-size: 11.5px; color: #64748b;">📍 0.4 mi away · Pine District</div>
+      <section class="donor-details-card">
+        <div class="donor-head">
+          <span class="donor-tag">DONOR KITCHEN</span>
+          <div class="donor-name-row">
+            <div class="donor-info-left">
+              <h2 class="donor-title">Green Garden Bistro</h2>
+              <span class="donor-dist">🧭 0.4 mi away • Pine District</span>
+            </div>
+            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=120&q=80" alt="Green Garden Bistro" class="donor-thumb">
           </div>
-          <img class="donor-thumb" src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=150&q=80" alt="Green Garden Bistro">
         </div>
 
-        <div class="donor-batch-details">
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 4px;">
-            <strong style="font-size: 13.5px; color: #0f172a;">18 Artisanal Bakery Portions</strong>
-            <span class="badge badge-gray">12.5 kg</span>
+        <div class="donor-items-box">
+          <div class="item-portions-row">
+            <div class="portion-icon-box">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#008744" stroke-width="2">
+                <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"></path>
+              </svg>
+            </div>
+            <div>
+              <strong class="portion-title">18 Artisanal Bakery Portions</strong>
+              <span class="portion-weight">12.5 kg</span>
+            </div>
           </div>
-          <p style="font-size: 12px; color: #64748b; margin-bottom: 8px;">
+          <p class="portion-desc">
             Sourdough boules, multigrain baguettes, and assorted sweet brioche.
           </p>
-          <div style="display: flex; flex-wrap: wrap; gap: 6px;">
-            <span class="badge badge-veg">● 100% Pure Veg · Certified Kitchen</span>
-            <span class="badge badge-gray">Ambient Temp · Crated in 2 Totes</span>
+
+          <div class="item-cert-box">
+            <span class="cert-veg">● 100% Pure Veg</span>
+            <span class="cert-kitchen">No Egg / No Gelatin • Certified Kitchen</span>
+          </div>
+
+          <div class="temp-crated-row">
+            <span>Ambient Temp</span>
+            <span>•</span>
+            <span>Crated in 2 Totes</span>
           </div>
         </div>
 
-        <!-- Pickup Directives Instructions -->
-        <div class="pickup-directives-box">
-          <div class="pickup-directives-title">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
-            <span>Pickup Instructions</span>
+        <!-- Pickup Instructions Box -->
+        <div class="pickup-instructions-box">
+          <div class="inst-title-row">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008744" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="9" y1="3" x2="9" y2="21"></line>
+            </svg>
+            <strong class="inst-title">Pickup Instructions</strong>
           </div>
-          <p class="pickup-directives-desc">
-            Access via <strong>Door #3 on Pine Alley</strong> (behind the recycling bay). Press buzzer <strong>"Kitchen 3B"</strong>. Sous Chef Marco is on-duty and notified for quick handoff.
+          <p class="inst-body">
+            Access via Door #3 on Pine Alley (behind the recycling bay). Press buzzer "Kitchen 3B". Sous Chef Marco is on-duty and notified for quick handoff.
           </p>
         </div>
 
-        <!-- Action Links -->
-        <a href="radar.html" class="btn-primary" style="margin-bottom: 10px;">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+        <!-- Primary Action Navigation -->
+        <a href="https://maps.google.com" target="_blank" class="btn-gps-nav">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
+          </svg>
           <span>Open GPS Navigation (Turn-by-Turn)</span>
         </a>
 
-        <div class="comm-btns-row">
-          <a href="call-screen.html" class="btn-secondary">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        <!-- Dual Call / Chat Buttons -->
+        <div class="comm-buttons-grid">
+          <a href="call.html" class="btn-comm">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
             <span>Call Kitchen</span>
           </a>
-          <a href="#chat" class="btn-secondary">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+
+          <a href="call.html" class="btn-comm">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
             <span>Chat Marco</span>
           </a>
         </div>
 
-        <!-- Mini Route Map Preview -->
-        <div class="mini-map-preview">
-          <img class="mini-map-img" src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=400&q=80" alt="Route Map">
-          <div class="mini-map-pill">
-            <span>Estimated transit: 6 mins walking</span>
+        <!-- Mini Route Preview Strip -->
+        <div class="route-preview-box">
+          <div class="route-info-bar">
+            <span>🚶 Estimated transit: 6 mins walking</span>
             <span>Pine Alley Ent.</span>
           </div>
         </div>
-      </article>
 
-      <!-- Handoff Quality Checklist Link -->
-      <a href="safety-audit.html" class="quality-checklist-link">
-        <div style="display: flex; align-items: center; gap: 8px;">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
-          <div>
-            <div>Handoff Quality Checklist</div>
-            <div style="font-size: 11px; font-weight: 500; color: #3b82f6;">Check tamper seal &amp; packaging weight</div>
+        <!-- Handoff Checklist Link -->
+        <a href="compliance-audit.html" class="handoff-checklist-link">
+          <div class="checklist-link-left">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#008744" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            <div>
+              <strong class="chk-label">Handoff Quality Checklist</strong>
+              <span class="chk-sub">Check tamper seal &amp; packaging weight</span>
+            </div>
           </div>
-        </div>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
-      </a>
-
-      <!-- Cancel Warning & Link -->
-      <footer class="cancel-claim-footer">
-        <p class="cancel-warning-fine">
-          Canceling under 45 minutes may result in food spoilage. Unclaimed rescues affect volunteer credibility score.
-        </p>
-        <a href="cancel-reservation.html" class="cancel-claim-btn">
-          <span>🚫 Release Claim &amp; Cancel Reservation</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
         </a>
-      </footer>
+
+        <!-- Release Claim / Cancel Section -->
+        <div class="cancel-warning-block">
+          <p class="cancel-warning-text">
+            Canceling under 45 minutes may result in food spoilage. Unclaimed rescues affect volunteer credibility score.
+          </p>
+          <a href="cancel-reservation.html" class="btn-cancel-reservation">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="15" y1="9" x2="9" y2="15"></line>
+              <line x1="9" y1="9" x2="15" y2="15"></line>
+            </svg>
+            <span>Release Claim &amp; Cancel Reservation</span>
+          </a>
+        </div>
+      </section>
     </main>
 
     <!-- Bottom Navigation Bar -->
-    <nav class="bottom-nav" aria-label="Main Navigation">
+    <nav class="bottom-nav-bar" aria-label="Main Navigation">
       <a href="explore.html" class="nav-item">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
-        <span>Explore</span>
+        <div class="nav-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+          </svg>
+        </div>
+        <span class="nav-label">Explore</span>
       </a>
-      <a href="list-food-step1.html" class="nav-item">
-        <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-        <span>List</span>
+
+      <a href="list-food.html" class="nav-item">
+        <div class="nav-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="16"></line>
+            <line x1="8" y1="12" x2="16" y2="12"></line>
+          </svg>
+        </div>
+        <span class="nav-label">List</span>
       </a>
-      <a href="reservation-pass.html" class="nav-item active">
-        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"></rect><line x1="7" y1="8" x2="17" y2="8"></line><line x1="7" y1="12" x2="17" y2="12"></line></svg>
-        <span>Passes</span>
+
+      <a href="reservation-pass.html" class="nav-item nav-item-active">
+        <div class="nav-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+            <line x1="7" y1="8" x2="17" y2="8"></line>
+            <line x1="7" y1="12" x2="17" y2="12"></line>
+            <line x1="7" y1="16" x2="13" y2="16"></line>
+          </svg>
+        </div>
+        <span class="nav-label">Passes</span>
       </a>
+
       <a href="queue.html" class="nav-item">
-        <svg viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
-        <span>Queue</span>
+        <div class="nav-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="8" y1="6" x2="21" y2="6"></line>
+            <line x1="8" y1="12" x2="21" y2="12"></line>
+            <line x1="8" y1="18" x2="21" y2="18"></line>
+            <line x1="3" y1="6" x2="3.01" y2="6"></line>
+            <line x1="3" y1="12" x2="3.01" y2="12"></line>
+            <line x1="3" y1="18" x2="3.01" y2="18"></line>
+          </svg>
+        </div>
+        <span class="nav-label">Queue</span>
       </a>
+
       <a href="impact.html" class="nav-item">
-        <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
-        <span>Impact</span>
+        <div class="nav-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="20" x2="18" y2="10"></line>
+            <line x1="12" y1="20" x2="12" y2="4"></line>
+            <line x1="6" y1="20" x2="6" y2="14"></line>
+          </svg>
+        </div>
+        <span class="nav-label">Impact</span>
       </a>
     </nav>
-
-    <!-- Prototype Screen Switcher -->
-    <details class="prototype-drawer">
-      <summary class="prototype-menu-trigger">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
-        <span>All 18 Screens</span>
-      </summary>
-      <div class="prototype-dropdown">
-        <div class="category-header">Auth & Onboarding</div>
-        <a href="index.html"><strong>1. Welcome Hero</strong> <span>p.1</span></a>
-        <a href="role-selection.html"><strong>2. Role Selection</strong> <span>p.2-4</span></a>
-        <a href="login.html"><strong>3. Login & Sign In</strong> <span>p.5-6</span></a>
-        <a href="register.html"><strong>4. Create Account</strong> <span>p.7-8</span></a>
-        
-        <div class="category-header">Discovery & Radar</div>
-        <a href="explore.html"><strong>5. Tactical Marketplace</strong> <span>p.9</span></a>
-        <a href="radar.html"><strong>6. Live Radar & Map</strong> <span>p.10</span></a>
-        <a href="safety-audit.html"><strong>7. Safety & Cold-Chain</strong> <span>p.11-12</span></a>
-        
-        <div class="category-header">Passes & Handoff</div>
-        <a href="reservation-pass.html"><strong>8. Active Dispatch Pass</strong> <span>p.13</span></a>
-        <a href="call-screen.html"><strong>9. In-App VoIP Call</strong> <span>p.14</span></a>
-        <a href="cancel-reservation.html"><strong>10. Cancel & Refund</strong> <span>p.15</span></a>
-        <a href="compliance-audit.html"><strong>11. Compliance & Audit</strong> <span>p.16</span></a>
-        
-        <div class="category-header">Donor & Operations</div>
-        <a href="list-food-step1.html"><strong>12. List Food: Details</strong> <span>p.17</span></a>
-        <a href="list-food-step2.html"><strong>13. List Food: Pickup</strong> <span>p.18</span></a>
-        <a href="alerts-feed.html"><strong>14. Tactical Feeds</strong> <span>p.19</span></a>
-        <a href="recipient-claim.html"><strong>15. NGO Claim Batch</strong> <span>p.20</span></a>
-        <a href="queue.html"><strong>16. Live Pickup Queue</strong> <span>p.21</span></a>
-        <a href="impact.html"><strong>17. Bakery Impact Hub</strong> <span>p.22</span></a>
-        <a href="profile.html"><strong>18. Profile & Operations</strong> <span>p.23</span></a>
-      </div>
-    </details>
   </div>
 </body>
 </html>
-
