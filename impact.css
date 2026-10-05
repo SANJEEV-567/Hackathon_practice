@@ -1,0 +1,317 @@
+/* Bakery Impact Hub Screen (Page 22) */
+@import url('common.css');
+
+.impact-screen {
+  background-color: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.impact-content {
+  padding: 12px 18px 26px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Header */
+.impact-header-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.ledger-subhead-tag {
+  font-size: 10.5px;
+  font-weight: 800;
+  color: #64748b;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.impact-main-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+/* Time Tabs */
+.period-tabs-nav {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: #f1f5f9;
+  padding: 4px;
+  border-radius: 12px;
+}
+
+.period-tab-btn {
+  text-align: center;
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #64748b;
+  text-decoration: none;
+}
+
+.period-tab-btn.active {
+  background: #ffffff;
+  color: #0f172a;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+/* 4-Card KPI Stat Grid */
+.impact-kpi-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.impact-kpi-card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.impact-kpi-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.impact-kpi-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: #ecfdf5;
+  color: #086d38;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.impact-kpi-label {
+  font-size: 11px;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.impact-kpi-value {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.impact-kpi-value small {
+  font-size: 11px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+/* Closing-Hour Surplus Bar Chart Card */
+.surplus-chart-card {
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #e2e8f0;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.chart-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.chart-sub-note {
+  font-size: 11.5px;
+  color: #64748b;
+}
+
+/* CSS Flex Bar Chart */
+.bar-chart-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 140px;
+  padding: 10px 10px 0 10px;
+  background: #f8fafc;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+  position: relative;
+}
+
+.bar-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  height: 100%;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+.bar-pct-tag {
+  font-size: 9.5px;
+  font-weight: 700;
+  color: #64748b;
+}
+
+.bar-pillar {
+  width: 28px;
+  border-radius: 6px 6px 0 0;
+  background: #94d3a2;
+  transition: height var(--transition-fast);
+}
+
+.bar-pillar.peak {
+  background: #086d38;
+}
+
+.bar-time-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: #475569;
+  margin-top: 4px;
+}
+
+.chart-legend-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #475569;
+}
+
+/* Food Category Split */
+.category-split-card {
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #e2e8f0;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.split-progress-bar {
+  height: 8px;
+  border-radius: var(--radius-full);
+  display: flex;
+  overflow: hidden;
+  background: #f1f5f9;
+}
+
+.split-seg-bread { width: 42%; background: #086d38; }
+.split-seg-meals { width: 35%; background: #0d9488; }
+.split-seg-produce { width: 18%; background: #6ee7b7; }
+.split-seg-dairy { width: 5%; background: #fde047; }
+
+.split-legend-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 12px;
+  font-size: 11.5px;
+}
+
+.split-legend-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.split-legend-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #475569;
+}
+
+.split-color-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+/* Community Reach Card */
+.community-reach-card {
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+}
+
+.community-photo-wrap {
+  position: relative;
+  height: 120px;
+}
+
+.community-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.community-overlay-pill {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  right: 8px;
+  background: rgba(15, 23, 42, 0.85);
+  color: #ffffff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 10.5px;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+}
+
+.community-stats-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 12px 16px;
+  gap: 12px;
+}
+
+.community-stat-val {
+  font-size: 16px;
+  font-weight: 800;
+  color: #086d38;
+}
+
+.community-stat-lbl {
+  font-size: 10.5px;
+  color: #64748b;
+}
+
+/* Daily Value Rescued Card */
+.value-rescued-card {
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #e2e8f0;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.value-amount-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.value-big-number {
+  font-size: 28px;
+  font-weight: 800;
+  color: #0f172a;
+}

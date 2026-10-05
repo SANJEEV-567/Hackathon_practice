@@ -1,0 +1,519 @@
+/* Safety & Cold Chain Screen (Pages 11 & 12) */
+@import url('common.css');
+
+.safety-screen {
+  background-color: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.safety-content {
+  padding: 14px 18px 30px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Header */
+.screen-header-simple {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.header-meta-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-title-safety {
+  font-size: 16px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.header-sub-safety {
+  font-size: 11px;
+  color: #64748b;
+}
+
+/* Hero Pass Banner Card */
+.haccp-pass-card {
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #d1fae5;
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+}
+
+.pass-badge-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.pass-haccp-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  background: #ecfdf5;
+  color: #059669;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+}
+
+.pass-shield-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #ecfdf5;
+  color: #059669;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pass-id-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 2px;
+}
+
+.pass-id-sub {
+  font-size: 12px;
+  color: #64748b;
+  margin-bottom: 8px;
+}
+
+.reserve-cost-pill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: #eff6ff;
+  border-radius: 12px;
+  font-size: 12.5px;
+  margin: 10px 0;
+}
+
+.reserve-cost-primary {
+  font-weight: 800;
+  color: #1e3a8a;
+}
+
+.reserve-cost-secondary {
+  color: #3b82f6;
+  font-weight: 600;
+}
+
+.handover-status-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: #086d38;
+}
+
+/* Cold Chain Telemetry Card */
+.telemetry-card {
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #e2e8f0;
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+}
+
+.temp-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.temp-label-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.temp-title {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.temp-sub {
+  font-size: 11px;
+  color: #64748b;
+}
+
+.temp-value-display {
+  text-align: right;
+}
+
+.temp-number {
+  font-size: 24px;
+  font-weight: 800;
+  color: #086d38;
+  line-height: 1;
+}
+
+.temp-range-badge {
+  font-size: 10px;
+  font-weight: 700;
+  color: #059669;
+}
+
+/* Probe Graph Simulation */
+.probe-graph-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 12px 14px;
+}
+
+.graph-top-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 700;
+  color: #475569;
+  margin-bottom: 10px;
+}
+
+.graph-svg-wrap {
+  width: 100%;
+  height: 55px;
+}
+
+.graph-time-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  font-weight: 700;
+  color: #64748b;
+  margin-top: 6px;
+}
+
+/* Bake & Holding Time Split */
+.time-limits-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.time-limit-box {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 12px;
+}
+
+.time-limit-label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10.5px;
+  font-weight: 800;
+  color: #64748b;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.time-limit-val {
+  font-size: 16px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.time-limit-pill {
+  display: inline-block;
+  font-size: 10.5px;
+  font-weight: 600;
+  color: #475569;
+  margin-top: 2px;
+}
+
+.time-limit-pill.safe {
+  color: #086d38;
+  font-weight: 700;
+}
+
+/* Checklist Packaging Section */
+.checklist-card {
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #e2e8f0;
+  padding: 16px;
+}
+
+.checklist-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.section-h3 {
+  font-size: 14.5px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.checks-ratio {
+  font-size: 11px;
+  font-weight: 800;
+  color: #086d38;
+  background: #dcfce7;
+  padding: 2px 7px;
+  border-radius: 6px;
+}
+
+.checks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.check-icon-circle {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #086d38;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.check-item-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.check-item-sub {
+  font-size: 11px;
+  color: #64748b;
+}
+
+/* Evidence Photos Card */
+.evidence-card {
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #e2e8f0;
+  padding: 16px;
+}
+
+.grade-badge-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  margin-bottom: 12px;
+}
+
+.grade-score-circle {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: #086d38;
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.evidence-photos-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.evidence-photo-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.evidence-img {
+  width: 100%;
+  height: 90px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-bottom: 4px;
+}
+
+.evidence-caption-title {
+  font-size: 10.5px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.evidence-caption-sub {
+  font-size: 9.5px;
+  color: #64748b;
+}
+
+/* Allergens Matrix */
+.matrix-card {
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #e2e8f0;
+  padding: 16px;
+}
+
+.allergen-tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 10px 0;
+}
+
+.cross-contam-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 10px;
+  background: #f8fafc;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  font-size: 11px;
+  color: #64748b;
+  line-height: 1.4;
+}
+
+/* Interactive Acceptance Checkbox */
+.acceptance-interactive-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.accept-checkbox-input {
+  position: absolute;
+  opacity: 0;
+}
+
+.accept-label-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 12px;
+  color: #334155;
+  line-height: 1.45;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1.5px solid #e2e8f0;
+  background: #ffffff;
+  transition: all var(--transition-fast);
+}
+
+.accept-custom-check {
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  border: 2px solid #cbd5e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+  transition: all var(--transition-fast);
+}
+
+.accept-custom-check svg {
+  display: none;
+  width: 14px;
+  height: 14px;
+  stroke: #ffffff;
+}
+
+/* Default Unchecked Button State (Page 11) */
+.btn-reserve-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 15px;
+  border-radius: 14px;
+  background: #93c5aa;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+/* Pure CSS Checked State (Page 12) */
+.accept-checkbox-input:checked + .accept-label-card {
+  border-color: #086d38;
+  background: #f0fdf4;
+}
+
+.accept-checkbox-input:checked + .accept-label-card .accept-custom-check {
+  background: #086d38;
+  border-color: #086d38;
+}
+
+.accept-checkbox-input:checked + .accept-label-card .accept-custom-check svg {
+  display: block;
+}
+
+.accept-checkbox-input:checked ~ .btn-reserve-trigger {
+  background: #086d38;
+  box-shadow: 0 4px 16px rgba(8, 109, 56, 0.35);
+}
+
+.accept-checkbox-input:checked ~ .btn-reserve-trigger:hover {
+  background: #06572c;
+  transform: translateY(-2px);
+}
+
+/* PDF Download Link */
+.btn-pdf-download {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #086d38;
+  text-decoration: none;
+  background: #f0fdf4;
+  border-radius: 12px;
+  border: 1px solid #bbf7d0;
+  transition: background var(--transition-fast);
+}
+
+.btn-pdf-download:hover {
+  background: #dcfce7;
+}

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Pickup Queue - SurplusLink</title>
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="queue.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container queue-screen">
+    <!-- Status Bar -->
+    <header class="device-status-bar" style="background: #ffffff;">
+      <span class="time">9:41</span>
+      <div class="icons">
+        <svg viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.9-1.9C9.28 19.64 10.59 20 12 20c4.97 0 9-4.03 9-9s-4.03-9-9-9zm0 15c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 4C7.31 4 3.07 5.9 0 8.98L12 21 24 8.98C20.93 5.9 16.69 4 12 4z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M17 4h-3V2h-4v2H7v18h10V4z"/></svg>
+      </div>
+    </header>
+
+    <!-- Top App Header -->
+    <header class="app-header">
+      <div class="header-left">
+        <a href="explore.html" class="header-brand">
+          <div class="brand-icon-box">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+            </svg>
+          </div>
+          <div class="brand-text-wrap">
+            <span class="brand-title">Queue</span>
+            <span class="brand-subtitle">Tactical Food Rescue</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="header-right">
+        <a href="radar.html" class="live-radar-pill">
+          <span class="pulse-dot"></span>
+          <span>LIVE RADAR</span>
+        </a>
+        <a href="alerts-feed.html" class="btn-icon" aria-label="Notifications">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+          <span class="badge-dot">3</span>
+        </a>
+        <a href="profile.html" class="user-avatar-btn" aria-label="User Profile">
+          <img src="https://images.unsplash.com/photo-1583394293214-28ded15ee548?auto=format&fit=crop&w=120&q=80" alt="Michael Vance">
+        </a>
+      </div>
+    </header>
+
+    <!-- Content Area -->
+    <main class="queue-content">
+      <!-- Queue Header -->
+      <section class="queue-header-group">
+        <div>
+          <h1 class="queue-title">Live Pickup Queue</h1>
+          <p class="queue-subtitle">Real-time volunteer and recipient dispatch tracker</p>
+        </div>
+        <a href="#refresh" class="btn-refresh-queue" aria-label="Refresh Queue">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+        </a>
+      </section>
+
+      <!-- Active Status Banner -->
+      <article class="queue-status-banner">
+        <span>● 3 Active Pickups in Progress • Next arrival LIVE</span>
+        <span class="badge badge-green" style="background: #ffffff;">LIVE</span>
+      </article>
+
+      <!-- Filter Tabs -->
+      <nav class="queue-tabs-scroll" aria-label="Queue Filter Tabs">
+        <a href="#all" class="queue-tab-btn active">All (4)</a>
+        <a href="#enroute" class="queue-tab-btn">En Route (2)</a>
+        <a href="#arrived" class="queue-tab-btn">Arrived (1)</a>
+        <a href="#scheduled" class="queue-tab-btn">Scheduled (1)</a>
+      </nav>
+
+      <!-- Queue Cards List -->
+      <section class="queue-cards-list">
+        <!-- Card 1: Arrived -->
+        <article class="q-card">
+          <div class="q-card-top-tag arrived">
+            <span>📍 ARRIVED · DOCK BAY 2 · 2m ago</span>
+            <span class="badge badge-green">READY</span>
+          </div>
+          <div class="q-driver-row">
+            <img class="q-driver-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Marcus Vance">
+            <div>
+              <h2 class="q-hub-title">St. Jude Shelter Van</h2>
+              <div class="q-driver-sub">Driver: Marcus Vance · Ford Transit #4</div>
+            </div>
+          </div>
+          <div class="q-batch-meta-row">
+            <span class="badge badge-gray">Batch #SL-884</span>
+            <span class="badge badge-veg">● Pure Veg</span>
+            <span class="badge badge-green">Chilled Transport</span>
+          </div>
+          <div class="q-food-desc">45 Ready Meals (Vegetarian Pasta, Stews, Soups)</div>
+          <div class="q-pricing-line">
+            <span>Reserved: <strong>$5.00</strong></span>
+            <span>Value: $28.00 (82% off)</span>
+          </div>
+          <div style="display: flex; gap: 6px; font-size: 10px;">
+            <span class="badge badge-green">🛡️ HACCP Verified</span>
+            <span class="badge badge-green">🌡️ Temp Checked 3.2°C</span>
+            <span class="badge badge-gray">PIN: 8942</span>
+          </div>
+          <div class="q-btns-row">
+            <a href="call-screen.html" class="btn-secondary" style="padding: 10px; font-size: 12.5px;">Call Driver</a>
+            <a href="reservation-pass.html" class="btn-primary" style="padding: 10px; font-size: 12.5px;">Confirm Handoff</a>
+          </div>
+        </article>
+
+        <!-- Card 2: En Route (City Hope) -->
+        <article class="q-card">
+          <div class="q-card-top-tag enroute">
+            <span>🚲 EN ROUTE · 8 MINS AWAY · 0.6 mi</span>
+            <span class="badge badge-gray">⏱ 16:42 ETA</span>
+          </div>
+          <div class="q-hub-title">City Hope Food Bank</div>
+
+          <!-- Prominent Scan Pass Action Button -->
+          <a href="reservation-pass.html" class="btn-scan-qr-prominent">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+            <span>Scan Recipient QR Pass · $120 Rescue</span>
+          </a>
+
+          <div class="q-batch-meta-row">
+            <span class="badge badge-gray">Batch #SL-890</span>
+            <span class="badge badge-veg">● Pure Veg</span>
+            <span class="badge badge-gray">Bakery Surplus</span>
+          </div>
+          <div class="q-food-desc">18.5kg Artisanal Sourdough &amp; Brioche Pastries</div>
+          <div class="q-pricing-line">
+            <span>Reserved: <strong>$4.50</strong></span>
+            <span>Value: $26.00 (83% off)</span>
+          </div>
+          <div style="display: flex; gap: 6px; font-size: 10px;">
+            <span class="badge badge-green">Chiller Cambro Equipped</span>
+            <span class="badge badge-green">Pass Pre-authorized</span>
+          </div>
+          <div class="q-btns-row">
+            <a href="radar.html" class="btn-secondary" style="padding: 10px; font-size: 12.5px;">Live GPS Tracker</a>
+            <a href="safety-audit.html" class="btn-secondary" style="padding: 10px; font-size: 12.5px;">Safety Pass Ready</a>
+          </div>
+        </article>
+
+        <!-- Card 3: En Route (Community Pantry East) -->
+        <article class="q-card">
+          <div class="q-card-top-tag enroute">
+            <span>🚲 EN ROUTE · 24 MINS AWAY</span>
+            <span style="color: #b45309;">⏱ Window: 45m</span>
+          </div>
+          <div class="q-driver-row">
+            <img class="q-driver-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="David Chen">
+            <div>
+              <h2 class="q-hub-title">Community Pantry East</h2>
+              <div class="q-driver-sub">Volunteer: David Chen · Heavy Cargo E-Bike</div>
+            </div>
+          </div>
+          <div class="q-batch-meta-row">
+            <span class="badge badge-gray">Batch #SL-892</span>
+            <span class="badge badge-veg">● Pure Veg</span>
+            <span class="badge badge-green">Farm Direct</span>
+          </div>
+          <div class="q-food-desc">12kg Fresh Organic Produce (Heirloom Greens &amp; Squash)</div>
+          <div class="q-pricing-line">
+            <span>Reserved: <strong>$6.00</strong></span>
+            <span>Value: $32.00 (81% off)</span>
+          </div>
+          <div>
+            <div style="display: flex; justify-content: space-between; font-size: 10px; color: #64748b; margin-bottom: 2px;">
+              <span>Pickup Window Expiry</span>
+              <span>Closes 17:15</span>
+            </div>
+            <div style="height: 4px; background: #e2e8f0; border-radius: 4px; overflow: hidden;">
+              <div style="width: 70%; height: 100%; background: #086d38;"></div>
+            </div>
+          </div>
+          <a href="#message" class="btn-secondary" style="padding: 10px; font-size: 12.5px;">Message Volunteer</a>
+        </article>
+
+        <!-- Card 4: Scheduled -->
+        <article class="q-card">
+          <div class="q-card-top-tag scheduled">
+            <span>📅 SCHEDULED · 16:30 – 17:00</span>
+            <span style="color: #b45309;">⏱ Expiring in 2h 15m</span>
+          </div>
+          <div class="q-hub-title">Youth Haven Kitchen</div>
+          <div style="font-size: 11.5px; color: #64748b;">Awaiting Courier Assignment</div>
+          <div class="q-batch-meta-row">
+            <span class="badge badge-gray">Batch #SL-895</span>
+            <span class="badge badge-urgent">Non-Veg</span>
+            <span class="badge badge-gray">Bento Boxes</span>
+          </div>
+          <div class="q-food-desc">30 Packed Bento Lunches (Teriyaki Chicken, Egg &amp; Brown Rice)</div>
+          <div class="q-pricing-line">
+            <span>Reserved: <strong>$6.50</strong></span>
+            <span>Value: $34.00 (81% off)</span>
+          </div>
+          <a href="#rebroadcast" class="btn-secondary" style="padding: 10px; font-size: 12.5px; background: #ecfdf5; border-color: #a7f3d0; color: #065f46;">
+            <span>📡 Re-broadcast to Nearby Volunteers</span>
+          </a>
+        </article>
+      </section>
+
+      <!-- Today's Dispatch Metrics -->
+      <article class="dispatch-metrics-card">
+        <div class="metrics-title-row">
+          <span style="font-size: 13.5px; font-weight: 800; color: #0f172a;">Today's Dispatch Metrics</span>
+          <span class="badge badge-green">100% Rescue Success</span>
+        </div>
+        <div class="metrics-3-col">
+          <div class="metric-cell">
+            <div class="metric-cell-val">142 kg</div>
+            <div class="metric-cell-lbl">Food Rescued</div>
+          </div>
+          <div class="metric-cell">
+            <div class="metric-cell-val">$120.00</div>
+            <div class="metric-cell-lbl">Rescue Value</div>
+          </div>
+          <div class="metric-cell">
+            <div class="metric-cell-val">$22.00</div>
+            <div class="metric-cell-lbl">Total Reserved</div>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="bottom-nav" aria-label="Main Navigation">
+      <a href="explore.html" class="nav-item">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+        <span>Explore</span>
+      </a>
+      <a href="list-food-step1.html" class="nav-item">
+        <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+        <span>List</span>
+      </a>
+      <a href="reservation-pass.html" class="nav-item">
+        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"></rect><line x1="7" y1="8" x2="17" y2="8"></line><line x1="7" y1="12" x2="17" y2="12"></line></svg>
+        <span>Passes</span>
+      </a>
+      <a href="queue.html" class="nav-item active">
+        <svg viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+        <span>Queue</span>
+      </a>
+      <a href="impact.html" class="nav-item">
+        <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+        <span>Impact</span>
+      </a>
+    </nav>
+
+    <!-- Prototype Screen Switcher -->
+    <details class="prototype-drawer">
+      <summary class="prototype-menu-trigger">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+        <span>All 18 Screens</span>
+      </summary>
+      <div class="prototype-dropdown">
+        <div class="category-header">Auth & Onboarding</div>
+        <a href="index.html"><strong>1. Welcome Hero</strong> <span>p.1</span></a>
+        <a href="role-selection.html"><strong>2. Role Selection</strong> <span>p.2-4</span></a>
+        <a href="login.html"><strong>3. Login & Sign In</strong> <span>p.5-6</span></a>
+        <a href="register.html"><strong>4. Create Account</strong> <span>p.7-8</span></a>
+        
+        <div class="category-header">Discovery & Radar</div>
+        <a href="explore.html"><strong>5. Tactical Marketplace</strong> <span>p.9</span></a>
+        <a href="radar.html"><strong>6. Live Radar & Map</strong> <span>p.10</span></a>
+        <a href="safety-audit.html"><strong>7. Safety & Cold-Chain</strong> <span>p.11-12</span></a>
+        
+        <div class="category-header">Passes & Handoff</div>
+        <a href="reservation-pass.html"><strong>8. Active Dispatch Pass</strong> <span>p.13</span></a>
+        <a href="call-screen.html"><strong>9. In-App VoIP Call</strong> <span>p.14</span></a>
+        <a href="cancel-reservation.html"><strong>10. Cancel & Refund</strong> <span>p.15</span></a>
+        <a href="compliance-audit.html"><strong>11. Compliance & Audit</strong> <span>p.16</span></a>
+        
+        <div class="category-header">Donor & Operations</div>
+        <a href="list-food-step1.html"><strong>12. List Food: Details</strong> <span>p.17</span></a>
+        <a href="list-food-step2.html"><strong>13. List Food: Pickup</strong> <span>p.18</span></a>
+        <a href="alerts-feed.html"><strong>14. Tactical Feeds</strong> <span>p.19</span></a>
+        <a href="recipient-claim.html"><strong>15. NGO Claim Batch</strong> <span>p.20</span></a>
+        <a href="queue.html"><strong>16. Live Pickup Queue</strong> <span>p.21</span></a>
+        <a href="impact.html"><strong>17. Bakery Impact Hub</strong> <span>p.22</span></a>
+        <a href="profile.html"><strong>18. Profile & Operations</strong> <span>p.23</span></a>
+      </div>
+    </details>
+  </div>
+</body>
+</html>

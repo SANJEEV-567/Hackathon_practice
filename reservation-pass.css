@@ -1,0 +1,424 @@
+/* Reservation Pass Screen (Page 13) */
+@import url('common.css');
+
+.pass-screen {
+  background-color: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.pass-content {
+  padding: 14px 18px 24px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Status Banner */
+.active-dispatch-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  background: #ecfdf5;
+  border: 1px solid #bbf7d0;
+  font-size: 11px;
+  font-weight: 800;
+  color: #065f46;
+}
+
+.claim-code-pill {
+  color: #086d38;
+}
+
+/* Header Text */
+.pass-header-group {
+  margin-top: 4px;
+}
+
+.pass-main-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.3px;
+}
+
+.pass-pickup-sub {
+  font-size: 13.5px;
+  color: #059669;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Countdown Card */
+.countdown-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  border-radius: 16px;
+  background: #f0fdf4;
+  border: 1.5px solid #a7f3d0;
+}
+
+.countdown-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.countdown-icon {
+  font-size: 20px;
+}
+
+.countdown-label {
+  font-size: 10.5px;
+  font-weight: 800;
+  color: #065f46;
+  text-transform: uppercase;
+}
+
+.countdown-timer-val {
+  font-family: var(--font-mono);
+  font-size: 19px;
+  font-weight: 800;
+  color: #086d38;
+  letter-spacing: 0.5px;
+}
+
+.priority-lane-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  background: #ffffff;
+  border: 1px solid #a7f3d0;
+  color: #086d38;
+  font-size: 11.5px;
+  font-weight: 800;
+}
+
+/* Payment & Impact Summary */
+.summary-card {
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #e2e8f0;
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+}
+
+.summary-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.summary-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.summary-split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.summary-metric-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.summary-metric-label {
+  font-size: 11px;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.summary-metric-value {
+  font-size: 20px;
+  font-weight: 800;
+  color: #086d38;
+}
+
+.summary-metric-sub {
+  font-size: 10.5px;
+  color: #94a3b8;
+}
+
+.summary-footer-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #64748b;
+  padding-top: 10px;
+  border-top: 1px solid #f1f5f9;
+}
+
+/* Crypto QR Token Card */
+.qr-token-card {
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1.5px solid #d1fae5;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.qr-header-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.qr-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.qr-code-box {
+  position: relative;
+  width: 190px;
+  height: 190px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 12px;
+  border: 2px dashed #a7f3d0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.qr-center-shield {
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #086d38;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.qr-scanner-hint {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #64748b;
+  margin-bottom: 14px;
+}
+
+.pin-terminal-box {
+  width: 100%;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 10px 14px;
+  margin-bottom: 12px;
+}
+
+.pin-label {
+  font-size: 10px;
+  font-weight: 800;
+  color: #64748b;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.pin-display-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.pin-digits {
+  font-family: var(--font-mono);
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: #0f172a;
+}
+
+.btn-copy-pin {
+  color: #64748b;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.qr-actions-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+/* Donor Kitchen Details */
+.donor-card {
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #e2e8f0;
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+}
+
+.donor-top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.donor-meta-name {
+  font-size: 16px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.donor-thumb {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.donor-batch-details {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+/* Instructions */
+.pickup-directives-box {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 14px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.pickup-directives-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 800;
+  color: #1e3a8a;
+  margin-bottom: 4px;
+}
+
+.pickup-directives-desc {
+  font-size: 12px;
+  color: #1e40af;
+  line-height: 1.45;
+}
+
+/* Actions Grid */
+.comm-btns-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+/* Mini Route Map Preview */
+.mini-map-preview {
+  position: relative;
+  height: 110px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+.mini-map-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mini-map-pill {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  right: 8px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(4px);
+  color: #ffffff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* Quality Checklist Button */
+.quality-checklist-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: #1e3a8a;
+  text-decoration: none;
+  font-size: 12.5px;
+  font-weight: 700;
+}
+
+/* Cancel Link */
+.cancel-claim-footer {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.cancel-warning-fine {
+  font-size: 10.5px;
+  color: #64748b;
+  margin-bottom: 8px;
+}
+
+.cancel-claim-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #dc2626;
+  font-size: 13.5px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.cancel-claim-btn:hover {
+  text-decoration: underline;
+}

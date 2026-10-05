@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SurplusLink - Bakery Rescue</title>
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container welcome-screen">
+    <!-- Top Status Bar -->
+    <header class="device-status-bar">
+      <span class="time">9:41</span>
+      <div class="icons">
+        <svg viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.9-1.9C9.28 19.64 10.59 20 12 20c4.97 0 9-4.03 9-9s-4.03-9-9-9zm0 15c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 4C7.31 4 3.07 5.9 0 8.98L12 21 24 8.98C20.93 5.9 16.69 4 12 4z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M17 4h-3V2h-4v2H7v18h10V4z"/></svg>
+      </div>
+    </header>
+
+    <!-- Hero Visual Section -->
+    <div class="hero-backdrop" aria-hidden="true"></div>
+
+    <section class="hero-floating-badges">
+      <div class="stat-pill-dark">
+        <span class="pulse-dot"></span>
+        <span>18,400+ meals saved this month</span>
+      </div>
+      <div class="stat-pill-light">
+        <svg viewBox="0 0 24 24" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+          <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+        </svg>
+        <span>ZERO WASTE</span>
+      </div>
+    </section>
+
+    <!-- Bottom Sheet Content Modal -->
+    <main class="bottom-sheet-card">
+      <div class="drag-handle-bar" aria-hidden="true"></div>
+
+      <div class="sheet-badge-row">
+        <div class="sheet-logo-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m16 2-4 4 4 4"/>
+            <path d="M12 6h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h2"/>
+            <path d="m8 10-4-4 4-4"/>
+          </svg>
+        </div>
+        <div class="sheet-badge-text">
+          <span class="sheet-badge-brand">SurplusLink</span>
+          <span class="sheet-badge-category">Bakery Rescue</span>
+        </div>
+      </div>
+
+      <header class="sheet-title-group">
+        <h1 class="sheet-title-main">SurplusLink</h1>
+        <h2 class="sheet-title-sub">Bakery Rescue</h2>
+      </header>
+
+      <p class="sheet-description">
+        Rescuing fresh bakery food before closing time.
+      </p>
+
+      <div class="sheet-action">
+        <a href="role-selection.html" class="sheet-btn-start">
+          <span>Get Started</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+
+      <footer class="sheet-features-row">
+        <article class="feature-pill-card">
+          <div class="feature-icon-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 13h18c0 4.418-4.03 8-9 8s-9-3.582-9-8Z"/>
+              <path d="M12 5C7 5 4 8 3 13h18c-1-5-4-8-9-8Z"/>
+              <path d="M8 9a4 4 0 0 1 4-4"/>
+              <path d="M12 5a4 4 0 0 1 4 4"/>
+            </svg>
+          </div>
+          <span class="feature-label">Fresh Breads & Pastries</span>
+        </article>
+
+        <article class="feature-pill-card">
+          <div class="feature-icon-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+              <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+            </svg>
+          </div>
+          <span class="feature-label">Zero Bakery Waste</span>
+        </article>
+
+        <article class="feature-pill-card">
+          <div class="feature-icon-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <span class="feature-label">Local Community Support</span>
+        </article>
+      </footer>
+    </main>
+
+    <!-- Prototype Screen Switcher (Drawer for Evaluator Navigation) -->
+    <details class="prototype-drawer">
+      <summary class="prototype-menu-trigger">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+        <span>All 18 Screens</span>
+      </summary>
+      <div class="prototype-dropdown">
+        <div class="category-header">Auth & Onboarding</div>
+        <a href="index.html"><strong>1. Welcome Hero</strong> <span>p.1</span></a>
+        <a href="role-selection.html"><strong>2. Role Selection</strong> <span>p.2-4</span></a>
+        <a href="login.html"><strong>3. Login & Sign In</strong> <span>p.5-6</span></a>
+        <a href="register.html"><strong>4. Create Account</strong> <span>p.7-8</span></a>
+        
+        <div class="category-header">Discovery & Radar</div>
+        <a href="explore.html"><strong>5. Tactical Marketplace</strong> <span>p.9</span></a>
+        <a href="radar.html"><strong>6. Live Radar & Map</strong> <span>p.10</span></a>
+        <a href="safety-audit.html"><strong>7. Safety & Cold-Chain</strong> <span>p.11-12</span></a>
+        
+        <div class="category-header">Passes & Handoff</div>
+        <a href="reservation-pass.html"><strong>8. Active Dispatch Pass</strong> <span>p.13</span></a>
+        <a href="call-screen.html"><strong>9. In-App VoIP Call</strong> <span>p.14</span></a>
+        <a href="cancel-reservation.html"><strong>10. Cancel & Refund</strong> <span>p.15</span></a>
+        <a href="compliance-audit.html"><strong>11. Compliance & Audit</strong> <span>p.16</span></a>
+        
+        <div class="category-header">Donor & Operations</div>
+        <a href="list-food-step1.html"><strong>12. List Food: Details</strong> <span>p.17</span></a>
+        <a href="list-food-step2.html"><strong>13. List Food: Pickup</strong> <span>p.18</span></a>
+        <a href="alerts-feed.html"><strong>14. Tactical Feeds</strong> <span>p.19</span></a>
+        <a href="recipient-claim.html"><strong>15. NGO Claim Batch</strong> <span>p.20</span></a>
+        <a href="queue.html"><strong>16. Live Pickup Queue</strong> <span>p.21</span></a>
+        <a href="impact.html"><strong>17. Bakery Impact Hub</strong> <span>p.22</span></a>
+        <a href="profile.html"><strong>18. Profile & Operations</strong> <span>p.23</span></a>
+      </div>
+    </details>
+  </div>
+</body>
+</html>

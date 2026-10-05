@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>List Food (Step 1) - SurplusLink</title>
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="list-food-step1.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container list-step1-screen">
+    <!-- Status Bar -->
+    <header class="device-status-bar" style="background: #ffffff;">
+      <span class="time">9:41</span>
+      <div class="icons">
+        <svg viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.9-1.9C9.28 19.64 10.59 20 12 20c4.97 0 9-4.03 9-9s-4.03-9-9-9zm0 15c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 4C7.31 4 3.07 5.9 0 8.98L12 21 24 8.98C20.93 5.9 16.69 4 12 4z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M17 4h-3V2h-4v2H7v18h10V4z"/></svg>
+      </div>
+    </header>
+
+    <!-- Top App Header -->
+    <header class="app-header">
+      <div class="header-left">
+        <a href="explore.html" class="header-brand">
+          <div class="brand-icon-box">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+            </svg>
+          </div>
+          <div class="brand-text-wrap">
+            <span class="brand-title">SurplusLink</span>
+            <span class="brand-subtitle">Tactical Food Rescue</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="header-right">
+        <a href="radar.html" class="live-radar-pill">
+          <span class="pulse-dot"></span>
+          <span>LIVE RADAR</span>
+        </a>
+        <a href="alerts-feed.html" class="btn-icon" aria-label="Notifications">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+          <span class="badge-dot">3</span>
+        </a>
+        <a href="profile.html" class="user-avatar-btn" aria-label="User Profile">
+          <img src="https://images.unsplash.com/photo-1583394293214-28ded15ee548?auto=format&fit=crop&w=120&q=80" alt="Michael Vance">
+        </a>
+      </div>
+    </header>
+
+    <!-- Step 1 Content Form -->
+    <main class="step1-content">
+      <!-- Donor ID Banner -->
+      <article class="donor-id-banner">
+        <div class="donor-id-info">
+          <div class="donor-id-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+          </div>
+          <div>
+            <div class="donor-id-name">Green Garden Bistro ✓</div>
+            <div class="donor-id-meta">Verified Commercial Kitchen #4182</div>
+          </div>
+        </div>
+        <span class="badge badge-green">BATCH 01</span>
+      </article>
+
+      <!-- Step Navigator Flow -->
+      <section class="step-nav-bar">
+        <div class="step-indicator-top">
+          <div class="step-badge-num">
+            <span class="step-circle-icon">1</span>
+            <span>Surplus Item &amp; Freshness</span>
+          </div>
+          <span class="step-ratio-tag">Step 1 of 2</span>
+        </div>
+        <div class="step-subtext-flow">
+          Step 1 of 2: Item Details &amp; Freshness → <strong>Next: Pickup Window &amp; Dispatch</strong>
+        </div>
+      </section>
+
+      <!-- Batch Photo -->
+      <section class="photo-upload-section">
+        <div class="label-required-row">
+          <span class="field-title-bold">Batch Verification Photo</span>
+          <span style="font-size: 11px; font-weight: 700; color: #086d38;">✦ Instant Inspection</span>
+        </div>
+        <div class="photo-preview-wrap">
+          <img class="photo-preview-img" src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80" alt="Artisan bread crates batch photo">
+          <div class="photo-attached-pill">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Photo Attached (1.4MB)</span>
+          </div>
+          <a href="#camera" class="photo-camera-btn" aria-label="Take Photo">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+          </a>
+        </div>
+      </section>
+
+      <!-- Surplus Item Title & Categories -->
+      <section class="form-card">
+        <div class="label-required-row">
+          <label for="item-title-field" class="field-title-bold">Surplus Item Title</label>
+          <span class="required-badge">Required</span>
+        </div>
+        <div class="input-icon-wrap">
+          <input type="text" id="item-title-field" class="form-text-input" value="Artisanal Sourdough Loaves &amp; 6 Brioche">
+        </div>
+        <div class="quick-category-pills">
+          <a href="#cat-bakery" class="quick-cat-btn active">🍞 Bakery &amp; Bread</a>
+          <a href="#cat-meals" class="quick-cat-btn">🍲 Prepared Meals</a>
+          <a href="#cat-produce" class="quick-cat-btn">🥗 Fresh Produce</a>
+        </div>
+      </section>
+
+      <!-- Dietary Classification -->
+      <section class="form-card">
+        <div class="label-required-row">
+          <span class="field-title-bold">Dietary Classification</span>
+          <span class="required-badge">Required</span>
+        </div>
+        <div class="dietary-radio-group">
+          <div>
+            <input type="radio" name="diet" id="diet-veg" class="diet-input" style="position: absolute; opacity: 0;" checked>
+            <label for="diet-veg" class="diet-radio-label">
+              <span style="color: #086d38;">● Pure Veg</span>
+            </label>
+          </div>
+          <div>
+            <input type="radio" name="diet" id="diet-nonveg" class="diet-input" style="position: absolute; opacity: 0;">
+            <label for="diet-nonveg" class="diet-radio-label">
+              <span style="color: #c2410c;">● Non-Veg</span>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <!-- Portions & Weight -->
+      <section class="form-card">
+        <div class="label-required-row">
+          <span class="field-title-bold">Portions &amp; Weight</span>
+          <span class="badge badge-green">High Yield</span>
+        </div>
+        <p style="font-size: 11px; color: #64748b; margin-top: -6px;">Estimated servings for community distribution</p>
+
+        <div class="counter-weight-grid">
+          <div class="counter-box">
+            <button type="button" class="btn-counter">-</button>
+            <span class="counter-val-text">18 portions</span>
+            <button type="button" class="btn-counter">+</button>
+          </div>
+          <div class="counter-box">
+            <span style="font-size: 11px; color: #64748b;">Est. Total</span>
+            <span class="counter-val-text">12.5 kg ⚖️</span>
+          </div>
+        </div>
+
+        <div style="font-size: 11px; color: #64748b; display: flex; justify-content: space-between; align-items: center; margin-top: 4px;">
+          <span>Pantry intake quota usage</span>
+          <span style="color: #086d38; font-weight: 700;">72% of standard crate</span>
+        </div>
+      </section>
+
+      <!-- Pricing & Reservation Cost -->
+      <section class="form-card">
+        <div class="label-required-row">
+          <div>
+            <span class="field-title-bold">Item Pricing &amp; Reservation Cost</span>
+            <div style="font-size: 11px; color: #64748b;">Subsidized rate or free donation</div>
+          </div>
+          <span class="item-discount-tag">79% OFF</span>
+        </div>
+
+        <div class="pricing-split-grid">
+          <div class="price-input-box">
+            <div class="price-subhead">Original Retail Value</div>
+            <div class="price-big-num">$ 24.00</div>
+          </div>
+          <div class="price-input-box" style="border-color: #a7f3d0; background: #f0fdf4;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline;">
+              <span class="price-subhead" style="color: #065f46;">Rescue Price</span>
+              <span style="font-size: 10px; color: #086d38; font-weight: 700;">$0 Free Shelters</span>
+            </div>
+            <div class="price-big-num green">$ 5.00</div>
+          </div>
+        </div>
+
+        <div style="background: #ecfdf5; border-radius: 10px; padding: 8px 12px; font-size: 11px; color: #065f46; font-weight: 700; display: flex; align-items: center; gap: 6px;">
+          <span>🌱 Savings to Rescuer: $19.00 Saved per bag (79% Discount)</span>
+        </div>
+      </section>
+
+      <!-- Time & Freshness Limits -->
+      <section class="form-card">
+        <div class="label-required-row">
+          <span class="field-title-bold">Time &amp; Freshness Limits</span>
+          <span style="font-size: 11px; color: #b45309; font-weight: 700;">⏱ Safety Window</span>
+        </div>
+        <div class="pricing-split-grid">
+          <div class="price-input-box">
+            <span class="price-subhead">PREPARED ON</span>
+            <div style="font-size: 15px; font-weight: 800; color: #0f172a;">Today, 2:00 PM</div>
+            <span style="font-size: 10px; color: #64748b;">Bakeshop cooling done</span>
+          </div>
+          <div class="price-input-box">
+            <div style="display: flex; justify-content: space-between;">
+              <span class="price-subhead">MUST CONSUME BY</span>
+              <span class="badge badge-amber" style="font-size: 9px; padding: 1px 5px;">8h left</span>
+            </div>
+            <div style="font-size: 15px; font-weight: 800; color: #0f172a;">Today, 10:30 PM</div>
+            <span style="font-size: 10px; color: #64748b;">Strict donation half-life</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Storage Requirement -->
+      <section class="form-card">
+        <div class="label-required-row">
+          <span class="field-title-bold">Storage Requirement</span>
+          <span class="required-badge">Tap to specify</span>
+        </div>
+        <div class="storage-options-grid">
+          <div>
+            <input type="radio" name="storage" id="store-room" class="storage-radio-input" checked>
+            <label for="store-room" class="storage-card-label">
+              <span class="storage-icon">🌡️</span>
+              <strong>Room Temp</strong>
+              <span>18°C – 22°C</span>
+            </label>
+          </div>
+          <div>
+            <input type="radio" name="storage" id="store-chill" class="storage-radio-input">
+            <label for="store-chill" class="storage-card-label">
+              <span class="storage-icon">❄️</span>
+              <strong>Chilled</strong>
+              <span>&lt; 4°C Keep Cold</span>
+            </label>
+          </div>
+          <div>
+            <input type="radio" name="storage" id="store-hot" class="storage-radio-input">
+            <label for="store-hot" class="storage-card-label">
+              <span class="storage-icon">♨️</span>
+              <strong>Hot Holding</strong>
+              <span>&gt; 60°C Thermal</span>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <!-- Allergen & Dietary Tags -->
+      <section class="form-card">
+        <div class="label-required-row">
+          <span class="field-title-bold">Allergen &amp; Dietary Tags</span>
+          <span class="required-badge">Select all that apply</span>
+        </div>
+        <div class="allergen-pills-wrap">
+          <span class="allergen-check-label danger">⚠️ Contains Gluten</span>
+          <span class="allergen-check-label success">✓ 100% Vegan</span>
+          <span class="allergen-check-label">Dairy-Free</span>
+          <span class="allergen-check-label">Nut-Free</span>
+          <span class="allergen-check-label">Halal Certified</span>
+        </div>
+      </section>
+
+      <!-- Packing Notes -->
+      <section class="form-card">
+        <label for="pack-notes" class="field-title-bold">Packing &amp; Handover Notes</label>
+        <div class="input-icon-wrap">
+          <input type="text" id="pack-notes" class="form-text-input" placeholder="e.g. Packed in clean food-safe cardboard cart" value="Packed in food-grade sealed totes">
+        </div>
+      </section>
+
+      <!-- Rescue Allocation Banner -->
+      <article class="fast-track-pill-banner">
+        <span>🚚 Rescue Allocation: <strong>Fast Track</strong></span>
+        <span>2 Shelters in 1.8km radius</span>
+      </article>
+
+      <!-- Primary Action CTA -->
+      <a href="list-food-step2.html" class="btn-primary" style="padding: 16px;">
+        <span>Proceed to Set Pickup Window</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
+    </main>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="bottom-nav" aria-label="Main Navigation">
+      <a href="explore.html" class="nav-item">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+        <span>Explore</span>
+      </a>
+      <a href="list-food-step1.html" class="nav-item active nav-list-btn">
+        <div class="nav-icon-circle">
+          <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+        </div>
+        <span>List</span>
+      </a>
+      <a href="reservation-pass.html" class="nav-item">
+        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"></rect><line x1="7" y1="8" x2="17" y2="8"></line><line x1="7" y1="12" x2="17" y2="12"></line></svg>
+        <span>Passes</span>
+      </a>
+      <a href="queue.html" class="nav-item">
+        <svg viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+        <span>Queue</span>
+      </a>
+      <a href="impact.html" class="nav-item">
+        <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+        <span>Impact</span>
+      </a>
+    </nav>
+
+    <!-- Prototype Screen Switcher -->
+    <details class="prototype-drawer">
+      <summary class="prototype-menu-trigger">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+        <span>All 18 Screens</span>
+      </summary>
+      <div class="prototype-dropdown">
+        <div class="category-header">Auth & Onboarding</div>
+        <a href="index.html"><strong>1. Welcome Hero</strong> <span>p.1</span></a>
+        <a href="role-selection.html"><strong>2. Role Selection</strong> <span>p.2-4</span></a>
+        <a href="login.html"><strong>3. Login & Sign In</strong> <span>p.5-6</span></a>
+        <a href="register.html"><strong>4. Create Account</strong> <span>p.7-8</span></a>
+        
+        <div class="category-header">Discovery & Radar</div>
+        <a href="explore.html"><strong>5. Tactical Marketplace</strong> <span>p.9</span></a>
+        <a href="radar.html"><strong>6. Live Radar & Map</strong> <span>p.10</span></a>
+        <a href="safety-audit.html"><strong>7. Safety & Cold-Chain</strong> <span>p.11-12</span></a>
+        
+        <div class="category-header">Passes & Handoff</div>
+        <a href="reservation-pass.html"><strong>8. Active Dispatch Pass</strong> <span>p.13</span></a>
+        <a href="call-screen.html"><strong>9. In-App VoIP Call</strong> <span>p.14</span></a>
+        <a href="cancel-reservation.html"><strong>10. Cancel & Refund</strong> <span>p.15</span></a>
+        <a href="compliance-audit.html"><strong>11. Compliance & Audit</strong> <span>p.16</span></a>
+        
+        <div class="category-header">Donor & Operations</div>
+        <a href="list-food-step1.html"><strong>12. List Food: Details</strong> <span>p.17</span></a>
+        <a href="list-food-step2.html"><strong>13. List Food: Pickup</strong> <span>p.18</span></a>
+        <a href="alerts-feed.html"><strong>14. Tactical Feeds</strong> <span>p.19</span></a>
+        <a href="recipient-claim.html"><strong>15. NGO Claim Batch</strong> <span>p.20</span></a>
+        <a href="queue.html"><strong>16. Live Pickup Queue</strong> <span>p.21</span></a>
+        <a href="impact.html"><strong>17. Bakery Impact Hub</strong> <span>p.22</span></a>
+        <a href="profile.html"><strong>18. Profile & Operations</strong> <span>p.23</span></a>
+      </div>
+    </details>
+  </div>
+</body>
+</html>

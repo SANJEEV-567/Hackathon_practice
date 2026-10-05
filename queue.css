@@ -1,0 +1,242 @@
+/* Live Pickup Queue Screen (Page 21) */
+@import url('common.css');
+
+.queue-screen {
+  background-color: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.queue-content {
+  padding: 12px 18px 24px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Header */
+.queue-header-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.queue-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.queue-subtitle {
+  font-size: 11.5px;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.btn-refresh-queue {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #475569;
+  text-decoration: none;
+}
+
+/* Status Active Banner */
+.queue-status-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 14px;
+  border-radius: var(--radius-full);
+  background: #ecfdf5;
+  border: 1px solid #bbf7d0;
+  font-size: 11px;
+  font-weight: 800;
+  color: #065f46;
+}
+
+/* Filter Tabs */
+.queue-tabs-scroll {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.queue-tab-btn {
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 700;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  color: #475569;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.queue-tab-btn.active {
+  background: #086d38;
+  color: #ffffff;
+  border-color: #086d38;
+}
+
+/* Queue Cards List */
+.queue-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.q-card {
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #e2e8f0;
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.q-card-top-tag {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10.5px;
+  font-weight: 800;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.q-card-top-tag.arrived {
+  color: #086d38;
+}
+
+.q-card-top-tag.enroute {
+  color: #0369a1;
+}
+
+.q-card-top-tag.scheduled {
+  color: #475569;
+}
+
+.q-driver-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.q-driver-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.q-hub-title {
+  font-size: 15px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.q-driver-sub {
+  font-size: 11.5px;
+  color: #64748b;
+}
+
+.q-batch-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10.5px;
+  font-weight: 700;
+}
+
+.q-food-desc {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.q-pricing-line {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11.5px;
+  color: #64748b;
+}
+
+.q-pricing-line strong {
+  color: #086d38;
+}
+
+/* Prominent Scan QR Button */
+.btn-scan-qr-prominent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 12px;
+  background: #086d38;
+  color: #ffffff;
+  font-size: 13.5px;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(8, 109, 56, 0.25);
+}
+
+/* 2-Column Buttons */
+.q-btns-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+/* Today's Dispatch Metrics 3-KPI Box */
+.dispatch-metrics-card {
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #e2e8f0;
+  padding: 16px;
+}
+
+.metrics-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.metrics-3-col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  text-align: center;
+}
+
+.metric-cell {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 10px 4px;
+  border: 1px solid #e2e8f0;
+}
+
+.metric-cell-val {
+  font-size: 17px;
+  font-weight: 800;
+  color: #086d38;
+}
+
+.metric-cell-lbl {
+  font-size: 10px;
+  font-weight: 600;
+  color: #64748b;
+  margin-top: 2px;
+}

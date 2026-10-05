@@ -1,0 +1,398 @@
+/* List Food Step 1 Screen (Page 17) */
+@import url('common.css');
+
+.list-step1-screen {
+  background-color: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.step1-content {
+  padding: 12px 18px 24px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Donor Kitchen Top Subhead */
+.donor-id-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  padding: 10px 14px;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+}
+
+.donor-id-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.donor-id-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #ecfdf5;
+  color: #086d38;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.donor-id-name {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.donor-id-meta {
+  font-size: 10.5px;
+  color: #64748b;
+}
+
+/* Step Progress Indicator */
+.step-nav-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.step-indicator-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.step-badge-num {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.step-circle-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #086d38;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-ratio-tag {
+  font-size: 11px;
+  font-weight: 700;
+  color: #086d38;
+  background: #dcfce7;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+}
+
+.step-subtext-flow {
+  font-size: 11px;
+  color: #64748b;
+}
+
+/* Photo Upload Box */
+.photo-upload-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.photo-preview-wrap {
+  position: relative;
+  height: 150px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+.photo-preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-attached-pill {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(4px);
+  color: #ffffff;
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.photo-camera-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+}
+
+/* Form Item Title */
+.form-card {
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #e2e8f0;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.label-required-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.field-title-bold {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.required-badge {
+  font-size: 10.5px;
+  color: #64748b;
+}
+
+.quick-category-pills {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+}
+
+.quick-cat-btn {
+  padding: 5px 10px;
+  border-radius: 8px;
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 11px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.quick-cat-btn.active {
+  background: #086d38;
+  color: #ffffff;
+}
+
+/* Dietary Toggle */
+.dietary-radio-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.diet-radio-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1.5px solid #e2e8f0;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.diet-input:checked + .diet-radio-label {
+  border-color: #086d38;
+  background: #f0fdf4;
+  color: #086d38;
+}
+
+/* Portions & Weight Counters */
+.counter-weight-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.counter-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 6px 10px;
+}
+
+.btn-counter {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: #086d38;
+  color: #ffffff;
+  border: none;
+  font-size: 16px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.counter-val-text {
+  font-size: 14px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+/* Pricing Grid */
+.pricing-split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.price-input-box {
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+
+.price-subhead {
+  font-size: 10.5px;
+  color: #64748b;
+  margin-bottom: 2px;
+}
+
+.price-big-num {
+  font-size: 18px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.price-big-num.green {
+  color: #086d38;
+}
+
+/* Storage Requirement 3 Grid */
+.storage-options-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.storage-radio-input {
+  position: absolute;
+  opacity: 0;
+}
+
+.storage-card-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 4px;
+  padding: 10px 6px;
+  border-radius: 12px;
+  border: 1.5px solid #e2e8f0;
+  background: #ffffff;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.storage-icon {
+  font-size: 18px;
+}
+
+.storage-card-label strong {
+  font-size: 11.5px;
+  color: #0f172a;
+}
+
+.storage-card-label span {
+  font-size: 9.5px;
+  color: #64748b;
+}
+
+.storage-radio-input:checked + .storage-card-label {
+  border-color: #086d38;
+  background: #f0fdf4;
+}
+
+.storage-radio-input:checked + .storage-card-label strong {
+  color: #086d38;
+}
+
+/* Allergen Multi-select Chips */
+.allergen-pills-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.allergen-check-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 10px;
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: #475569;
+}
+
+.allergen-check-label.danger {
+  background: #fee2e2;
+  color: #b91c1c;
+  border-color: #fecaca;
+}
+
+.allergen-check-label.success {
+  background: #ecfdf5;
+  color: #059669;
+  border-color: #a7f3d0;
+}
+
+/* Fast Track Allocation Banner */
+.fast-track-pill-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: #ecfdf5;
+  border: 1px solid #bbf7d0;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #065f46;
+}

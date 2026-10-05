@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile & Operations Hub - SurplusLink</title>
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="profile.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container profile-screen">
+    <!-- Status Bar -->
+    <header class="device-status-bar" style="background: #ffffff;">
+      <span class="time">9:41</span>
+      <div class="icons">
+        <svg viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.9-1.9C9.28 19.64 10.59 20 12 20c4.97 0 9-4.03 9-9s-4.03-9-9-9zm0 15c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 4C7.31 4 3.07 5.9 0 8.98L12 21 24 8.98C20.93 5.9 16.69 4 12 4z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M17 4h-3V2h-4v2H7v18h10V4z"/></svg>
+      </div>
+    </header>
+
+    <!-- Top App Header -->
+    <header class="app-header">
+      <div class="header-left">
+        <a href="explore.html" class="header-brand">
+          <div class="brand-icon-box">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+            </svg>
+          </div>
+          <div class="brand-text-wrap">
+            <span class="brand-title">SurplusLink</span>
+            <span class="brand-subtitle">Profile Hub</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="header-right">
+        <span class="live-radar-pill">
+          <span class="pulse-dot"></span>
+          <span>Metro Hub</span>
+        </span>
+        <a href="alerts-feed.html" class="btn-icon" aria-label="Notifications">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+          <span class="badge-dot">3</span>
+        </a>
+        <a href="profile.html" class="user-avatar-btn" aria-label="User Profile">
+          <img src="https://images.unsplash.com/photo-1583394293214-28ded15ee548?auto=format&fit=crop&w=120&q=80" alt="Michael Vance">
+        </a>
+      </div>
+    </header>
+
+    <!-- Main Profile Content -->
+    <main class="profile-content">
+      <!-- User ID Card -->
+      <article class="profile-user-card">
+        <div class="profile-user-top">
+          <div class="profile-large-avatar-wrap">
+            <img class="profile-avatar-img" src="https://images.unsplash.com/photo-1583394293214-28ded15ee548?auto=format&fit=crop&w=250&q=80" alt="Michael Vance">
+            <div class="profile-verified-badge">✓</div>
+          </div>
+          <div class="profile-info-block">
+            <div class="profile-name-row">
+              <h1 class="profile-name">Michael Vance</h1>
+              <div class="profile-quick-icons">
+                <a href="reservation-pass.html" class="btn-icon" style="width: 32px; height: 32px;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                </a>
+                <a href="#settings" class="btn-icon" style="width: 32px; height: 32px;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line></svg>
+                </a>
+              </div>
+            </div>
+            <div class="profile-business-name">The Daily Crumb Bakery &amp; Commissary</div>
+            <div class="profile-bay-tag">BAY 4 • COLD-DOCK NORTH</div>
+          </div>
+        </div>
+
+        <div class="profile-tags-row">
+          <span class="badge badge-green">🛡️ HACCP Lead</span>
+          <span class="badge badge-green">⭐ Health Grade A</span>
+          <span class="badge badge-gray">Level 4 Rescuer</span>
+        </div>
+      </article>
+
+      <!-- Active Tactical Mode Segmented Switch -->
+      <article class="tactical-mode-card">
+        <div class="mode-header-row">
+          <span>Active Tactical Mode</span>
+          <span style="color: #086d38; font-weight: 800;">● On Duty (Bay 4)</span>
+        </div>
+
+        <div class="mode-segmented-grid">
+          <div>
+            <input type="radio" name="tactical_role" id="mode-donor" class="mode-radio-input" checked>
+            <label for="mode-donor" class="mode-segment-label">
+              <span>🏪</span>
+              <span>Donor Kitchen</span>
+            </label>
+          </div>
+          <div>
+            <input type="radio" name="tactical_role" id="mode-courier" class="mode-radio-input">
+            <label for="mode-courier" class="mode-segment-label">
+              <span>🚲</span>
+              <span>Courier</span>
+            </label>
+          </div>
+          <div>
+            <input type="radio" name="tactical_role" id="mode-recipient" class="mode-radio-input">
+            <label for="mode-recipient" class="mode-segment-label">
+              <span>🤝</span>
+              <span>Recipient Hub</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="mode-footer-hours">
+          <span>⏱ Accepting rescue drops 08:00 – 22:30</span>
+          <a href="#adjust" style="color: #086d38; font-weight: 700; text-decoration: none;">Adjust</a>
+        </div>
+      </article>
+
+      <!-- Verified Impact & Cold Chain -->
+      <article class="verified-impact-card">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <h2 style="font-size: 14.5px; font-weight: 800; color: #0f172a;">Verified Impact &amp; Cold-Chain</h2>
+          <span class="badge badge-green">AUDIT Q3 ACTIVE</span>
+        </div>
+
+        <div class="impact-grid-4">
+          <div class="impact-metric-box">
+            <div class="impact-metric-header">
+              <span>Total Rescued</span>
+              <span>⚖️</span>
+            </div>
+            <div class="impact-metric-num">1,840 <small style="font-size: 12px;">lbs</small></div>
+            <div class="impact-metric-sub">📈 +18% this month</div>
+          </div>
+
+          <div class="impact-metric-box">
+            <div class="impact-metric-header">
+              <span>Meals Provided</span>
+              <span>🍲</span>
+            </div>
+            <div class="impact-metric-num">4,210 <small style="font-size: 12px;">srv</small></div>
+            <div style="font-size: 10.5px; color: #64748b;">12 local pantries</div>
+          </div>
+
+          <div class="impact-metric-box">
+            <div class="impact-metric-header">
+              <span>ESG Valuation</span>
+              <span>📊</span>
+            </div>
+            <div class="impact-metric-num" style="color: #086d38;">$18,450</div>
+            <div style="font-size: 10px; color: #64748b;">IRC 170(e)(3) Eligible</div>
+          </div>
+
+          <div class="impact-metric-box">
+            <div class="impact-metric-header">
+              <span>Telemetry Score</span>
+              <span>❄️</span>
+            </div>
+            <div class="impact-metric-num" style="color: #059669;">99.4%</div>
+            <div class="impact-metric-sub">● Zero Breaches (90d)</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Dock Door Keycode Box -->
+      <article class="dock-pin-callout-card">
+        <div class="dock-pin-info">
+          <span class="dock-pin-icon">🚪</span>
+          <div>
+            <div class="dock-pin-title">Dock Door #3 • Active</div>
+            <div class="dock-pin-code">Buzzer Keycode: <strong>4920#</strong></div>
+          </div>
+        </div>
+        <a href="#copy" class="btn-copy-dock-pin">Copy PIN</a>
+      </article>
+
+      <!-- Operations Hub Link Directory -->
+      <nav class="ops-hub-card" aria-label="Operations Directory">
+        <div class="ops-hub-header">
+          <span>Operations Hub</span>
+          <span style="font-size: 11px; color: #086d38; font-weight: 700;">Real-Time Routing</span>
+        </div>
+
+        <a href="reservation-pass.html" class="ops-hub-link">
+          <div class="ops-hub-link-left">
+            <div class="ops-link-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"></rect><line x1="7" y1="8" x2="17" y2="8"></line><line x1="7" y1="12" x2="17" y2="12"></line></svg>
+            </div>
+            <div>
+              <div class="ops-link-title">Saved Passes &amp; QR Vault</div>
+              <div class="ops-link-sub">2 active pickup passes, 48 archived</div>
+            </div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <span class="pulse-dot"></span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </div>
+        </a>
+
+        <a href="safety-audit.html" class="ops-hub-link">
+          <div class="ops-hub-link-left">
+            <div class="ops-link-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a4 4 0 0 0-4 4v7.5a6 6 0 1 0 8 0V6a4 4 0 0 0-4-4z"></path></svg>
+            </div>
+            <div>
+              <div class="ops-link-title">Food Safety Logs &amp; IoT Probes</div>
+              <div class="ops-link-sub">Sensors synced 3m ago • Probe #B4: 3.4°C</div>
+            </div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <span class="badge badge-green" style="font-size: 10px;">Optimal</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </div>
+        </a>
+
+        <a href="compliance-audit.html" class="ops-hub-link">
+          <div class="ops-hub-link-left">
+            <div class="ops-link-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            </div>
+            <div>
+              <div class="ops-link-title">Compliance &amp; Tax Documents</div>
+              <div class="ops-link-sub">Bill Emerson Good Samaritan Act records</div>
+            </div>
+          </div>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </a>
+
+        <a href="list-food-step2.html" class="ops-hub-link">
+          <div class="ops-hub-link-left">
+            <div class="ops-link-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+            </div>
+            <div>
+              <div class="ops-link-title">Pickup Windows &amp; Docks</div>
+              <div class="ops-link-sub">North Alley Ramp • Clearance 13ft 6in</div>
+            </div>
+          </div>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </a>
+      </nav>
+
+      <!-- Tactical Dispatch Preferences & Toggles -->
+      <section class="preferences-card">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <h2 style="font-size: 14.5px; font-weight: 800; color: #0f172a;">Tactical Dispatch Preferences</h2>
+          <span style="font-size: 11px; color: #64748b; font-weight: 700;">Autonomous Match</span>
+        </div>
+
+        <!-- Slider -->
+        <div class="radius-slider-wrap">
+          <div class="radius-slider-header">
+            <span style="font-size: 12px; font-weight: 700; color: #334155;">🎯 Rescue Radius</span>
+            <span class="badge badge-green" style="font-size: 12px; font-weight: 800;">5.0 miles</span>
+          </div>
+          <input type="range" class="radius-range-input" min="1" max="20" value="5">
+          <div class="radius-range-labels">
+            <span>1 mi (Hyper-local)</span>
+            <span>10 mi</span>
+            <span>20 mi (Regional)</span>
+          </div>
+        </div>
+
+        <!-- Toggle 1: Priority Flash Alerts -->
+        <div class="pref-toggle-row">
+          <div>
+            <div style="font-size: 13px; font-weight: 800; color: #0f172a;">⚡ Priority Flash Alerts (&lt; 60 mins)</div>
+            <div style="font-size: 11px; color: #64748b;">Immediate sound &amp; vibration on critical surplus</div>
+          </div>
+          <label class="toggle-switch-container">
+            <input type="checkbox" class="toggle-switch-input" checked>
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+
+        <!-- Toggle 2: Basement Offline Sync -->
+        <div class="pref-toggle-row">
+          <div>
+            <div style="font-size: 13px; font-weight: 800; color: #0f172a;">📡 Basement &amp; Dock Offline Sync</div>
+            <div style="font-size: 11px; color: #64748b;">Caches manifests &amp; QR verification tokens locally</div>
+          </div>
+          <label class="toggle-switch-container">
+            <input type="checkbox" class="toggle-switch-input" checked>
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+      </section>
+
+      <!-- Dispatch Hotline Banner -->
+      <article class="hotline-banner">
+        <div>
+          <div style="font-size: 12.5px; font-weight: 800; color: #0f172a;">📞 Dispatch Hotline</div>
+          <div style="font-size: 11px; color: #64748b;">24/7 Route Support</div>
+        </div>
+        <a href="call-screen.html" class="btn-secondary" style="padding: 6px 12px; font-size: 11.5px;">Call Line</a>
+      </article>
+
+      <!-- End Shift & Sign Out CTA -->
+      <a href="login.html" class="btn-signout">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+        <span>End Shift &amp; Sign Out</span>
+      </a>
+
+      <!-- Build Metadata Footer -->
+      <footer class="build-node-footer">
+        <div>SURPLUSLINK OPS V2.4.1 • HACCP SAFECHAIN BUILD #882</div>
+        <div>Encrypted Cold-Chain Node ID: SL-METRO-4991</div>
+      </footer>
+    </main>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="bottom-nav" aria-label="Main Navigation">
+      <a href="radar.html" class="nav-item">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+        <span>Radar</span>
+      </a>
+      <a href="list-food-step1.html" class="nav-item">
+        <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+        <span>List Food</span>
+      </a>
+      <a href="reservation-pass.html" class="nav-item">
+        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"></rect><line x1="7" y1="8" x2="17" y2="8"></line><line x1="7" y1="12" x2="17" y2="12"></line></svg>
+        <span>Passes</span>
+      </a>
+      <a href="alerts-feed.html" class="nav-item">
+        <svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+        <span>Alerts</span>
+      </a>
+      <a href="profile.html" class="nav-item active">
+        <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        <span>Profile</span>
+      </a>
+    </nav>
+
+    <!-- Prototype Screen Switcher -->
+    <details class="prototype-drawer">
+      <summary class="prototype-menu-trigger">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+        <span>All 18 Screens</span>
+      </summary>
+      <div class="prototype-dropdown">
+        <div class="category-header">Auth & Onboarding</div>
+        <a href="index.html"><strong>1. Welcome Hero</strong> <span>p.1</span></a>
+        <a href="role-selection.html"><strong>2. Role Selection</strong> <span>p.2-4</span></a>
+        <a href="login.html"><strong>3. Login & Sign In</strong> <span>p.5-6</span></a>
+        <a href="register.html"><strong>4. Create Account</strong> <span>p.7-8</span></a>
+        
+        <div class="category-header">Discovery & Radar</div>
+        <a href="explore.html"><strong>5. Tactical Marketplace</strong> <span>p.9</span></a>
+        <a href="radar.html"><strong>6. Live Radar & Map</strong> <span>p.10</span></a>
+        <a href="safety-audit.html"><strong>7. Safety & Cold-Chain</strong> <span>p.11-12</span></a>
+        
+        <div class="category-header">Passes & Handoff</div>
+        <a href="reservation-pass.html"><strong>8. Active Dispatch Pass</strong> <span>p.13</span></a>
+        <a href="call-screen.html"><strong>9. In-App VoIP Call</strong> <span>p.14</span></a>
+        <a href="cancel-reservation.html"><strong>10. Cancel & Refund</strong> <span>p.15</span></a>
+        <a href="compliance-audit.html"><strong>11. Compliance & Audit</strong> <span>p.16</span></a>
+        
+        <div class="category-header">Donor & Operations</div>
+        <a href="list-food-step1.html"><strong>12. List Food: Details</strong> <span>p.17</span></a>
+        <a href="list-food-step2.html"><strong>13. List Food: Pickup</strong> <span>p.18</span></a>
+        <a href="alerts-feed.html"><strong>14. Tactical Feeds</strong> <span>p.19</span></a>
+        <a href="recipient-claim.html"><strong>15. NGO Claim Batch</strong> <span>p.20</span></a>
+        <a href="queue.html"><strong>16. Live Pickup Queue</strong> <span>p.21</span></a>
+        <a href="impact.html"><strong>17. Bakery Impact Hub</strong> <span>p.22</span></a>
+        <a href="profile.html"><strong>18. Profile & Operations</strong> <span>p.23</span></a>
+      </div>
+    </details>
+  </div>
+</body>
+</html>
