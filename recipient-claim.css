@@ -314,3 +314,49 @@
   margin-top: 2px;
 }
 
+/* Responsive Breakpoints: Tablet & Laptop/Desktop */
+@media (min-width: 768px) {
+  .claim-content {
+    max-width: 860px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 24px 32px 64px;
+    gap: 20px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .claim-content {
+    max-width: 1240px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 28px;
+    align-items: start;
+    padding: 32px 48px 80px;
+  }
+
+  .recipient-hub-card,
+  .pantry-auth-card {
+    grid-column: 1 / -1;
+  }
+
+  .hero-item-box,
+  .compliance-check-box {
+    grid-column: 1;
+  }
+
+  .allocation-card,
+  .distrib-card,
+  .claim-content footer {
+    grid-column: 2;
+  }
+
+  .claim-content footer {
+    width: 100%;
+  }
+
+  .claim-content footer .btn-primary {
+    width: 100%;
+  }
+}
+

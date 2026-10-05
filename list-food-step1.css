@@ -397,3 +397,53 @@
   color: #065f46;
 }
 
+/* Responsive Breakpoints: Tablet & Laptop/Desktop */
+@media (min-width: 768px) {
+  .step1-content {
+    max-width: 860px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 24px 32px 64px;
+    gap: 20px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .step1-content {
+    max-width: 1240px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 24px;
+    align-items: start;
+    padding: 32px 48px 80px;
+  }
+
+  .donor-id-banner,
+  .step-nav-bar {
+    grid-column: 1 / -1;
+  }
+
+  /* Left column */
+  .photo-upload-section,
+  .form-item-title,
+  .form-dietary,
+  .form-storage,
+  .form-allergen {
+    grid-column: 1;
+  }
+
+  /* Right column */
+  .form-portions,
+  .form-pricing,
+  .form-freshness,
+  .form-notes,
+  .fast-track-pill-banner,
+  .btn-primary {
+    grid-column: 2;
+  }
+
+  .btn-primary {
+    width: 100%;
+  }
+}
+

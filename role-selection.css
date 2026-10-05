@@ -7,6 +7,16 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  width: 100%;
+}
+
+.role-container-wrap {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 /* Nav Header */
@@ -14,12 +24,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .back-btn {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   border-radius: var(--radius-full);
   display: flex;
   align-items: center;
@@ -37,17 +47,17 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 6px 14px;
+  padding: 8px 18px;
   border-radius: var(--radius-full);
   background: #086d38;
   color: #ffffff;
-  font-size: 13.5px;
+  font-size: 14px;
   font-weight: 700;
 }
 
 .user-badge-circle {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   border-radius: var(--radius-full);
   background: #dcfce7;
   color: #15803d;
@@ -61,11 +71,11 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 4px 12px;
+  padding: 5px 14px;
   border-radius: var(--radius-full);
   background: #ecfdf5;
   color: #059669;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.5px;
   align-self: flex-start;
@@ -83,7 +93,7 @@
 
 /* Titles */
 .role-heading {
-  font-size: 26px;
+  font-size: 28px;
   font-weight: 800;
   color: #0f172a;
   line-height: 1.2;
@@ -92,10 +102,11 @@
 }
 
 .role-subhead {
-  font-size: 13.5px;
+  font-size: 14.5px;
   color: #64748b;
-  line-height: 1.45;
-  margin-bottom: 24px;
+  line-height: 1.5;
+  margin-bottom: 28px;
+  max-width: 680px;
 }
 
 /* Interactive Pure CSS Radio Card Selection */
@@ -103,7 +114,7 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .role-radio-input {
@@ -118,7 +129,7 @@
   background: #ffffff;
   border: 1.5px solid #e2e8f0;
   border-radius: var(--radius-lg);
-  padding: 18px;
+  padding: 22px;
   cursor: pointer;
   transition: all var(--transition-normal);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
@@ -127,7 +138,7 @@
 .role-card-label:hover {
   border-color: #94a3b8;
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
 }
 
 /* Card Top Row */
@@ -135,13 +146,13 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .role-icon-box {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
   background: #f1f5f9;
   color: #334155;
   display: flex;
@@ -150,14 +161,14 @@
 }
 
 .role-icon-box svg {
-  width: 24px;
-  height: 24px;
+  width: 26px;
+  height: 26px;
 }
 
 /* Radio Indicator */
 .radio-custom-circle {
-  width: 22px;
-  height: 22px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   border: 2px solid #cbd5e1;
   background: #ffffff;
@@ -169,33 +180,33 @@
 
 .radio-custom-circle svg {
   display: none;
-  width: 14px;
-  height: 14px;
+  width: 15px;
+  height: 15px;
   stroke: #ffffff;
 }
 
 /* Card Content */
 .role-title {
-  font-size: 16px;
-  font-weight: 700;
+  font-size: 17px;
+  font-weight: 800;
   color: #0f172a;
   display: flex;
   align-items: center;
   gap: 6px;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
 .verified-icon {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   color: #10b981;
 }
 
 .role-desc {
-  font-size: 13px;
+  font-size: 13.5px;
   color: #64748b;
-  line-height: 1.4;
-  margin-bottom: 14px;
+  line-height: 1.45;
+  margin-bottom: 16px;
 }
 
 /* Tag Pills */
@@ -209,17 +220,17 @@
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  padding: 5px 10px;
+  padding: 6px 12px;
   border-radius: var(--radius-sm);
   background: #f1f5f9;
   color: #475569;
-  font-size: 11px;
+  font-size: 11.5px;
   font-weight: 600;
 }
 
 .role-tag svg {
-  width: 12px;
-  height: 12px;
+  width: 13px;
+  height: 13px;
 }
 
 /* Pure CSS Checked State */
@@ -227,7 +238,7 @@
   border-color: #059669;
   border-width: 2px;
   background: #ffffff;
-  box-shadow: 0 4px 18px rgba(5, 150, 105, 0.12);
+  box-shadow: 0 4px 20px rgba(5, 150, 105, 0.12);
 }
 
 .role-radio-input:checked + .role-card-label .role-icon-box {
@@ -253,26 +264,26 @@
 .info-notice-box {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
-  padding: 12px 14px;
+  gap: 12px;
+  padding: 14px 18px;
   border-radius: var(--radius-md);
   background: #f8fafc;
   border: 1px solid #e2e8f0;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
 }
 
 .info-notice-box svg {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   color: #64748b;
   flex-shrink: 0;
   margin-top: 1px;
 }
 
 .info-notice-text {
-  font-size: 12px;
+  font-size: 13px;
   color: #64748b;
-  line-height: 1.45;
+  line-height: 1.5;
 }
 
 /* Bottom CTA & Footer */
@@ -280,7 +291,7 @@
   margin-top: auto;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
 
 .legal-guarantee-note {
@@ -288,14 +299,36 @@
   align-items: center;
   justify-content: center;
   gap: 6px;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   color: #059669;
   text-align: center;
 }
 
 .legal-guarantee-note svg {
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
 }
 
+/* Tablet & Laptop Full Screen Responsive Breakpoints */
+@media (min-width: 768px) {
+  .role-selection-screen {
+    padding: 36px 48px;
+  }
+
+  .role-options-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .role-actions {
+    max-width: 480px;
+    margin: 32px auto 0 auto;
+    width: 100%;
+  }
+
+  .role-heading {
+    font-size: 34px;
+  }
+}

@@ -310,3 +310,75 @@
   text-decoration: none;
 }
 
+/* Responsive Breakpoints: Tablet & Laptop/Desktop */
+@media (min-width: 768px) {
+  .call-screen-bg {
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+    background: radial-gradient(circle at center, #13222d 0%, #060d13 100%);
+  }
+
+  .call-top-bar,
+  .call-location-note,
+  .call-person-center,
+  .directives-brief-card,
+  .call-tools-grid,
+  .end-call-area {
+    width: 100%;
+    max-width: 580px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .call-screen-bg {
+    padding: 48px 56px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1040px;
+    margin: 40px auto;
+    border-radius: 28px;
+    border: 1px solid #1e2e3d;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+    background: #0b141a;
+    gap: 32px;
+    align-items: center;
+  }
+
+  .call-top-bar {
+    grid-column: 1 / -1;
+    max-width: 100%;
+    margin-bottom: 0;
+  }
+
+  .call-location-note {
+    grid-column: 1 / -1;
+    max-width: 100%;
+    margin-bottom: 0;
+  }
+
+  .call-person-center {
+    grid-column: 1;
+    max-width: 100%;
+    margin-bottom: 0;
+  }
+
+  .directives-brief-card {
+    grid-column: 2;
+    max-width: 100%;
+    margin-bottom: 0;
+  }
+
+  .call-tools-grid {
+    grid-column: 1;
+    max-width: 100%;
+    margin-top: 16px;
+  }
+
+  .end-call-area {
+    grid-column: 2;
+    max-width: 100%;
+    margin-top: 16px;
+  }
+}
+

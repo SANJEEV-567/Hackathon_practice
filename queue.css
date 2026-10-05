@@ -241,3 +241,33 @@
   margin-top: 2px;
 }
 
+/* Responsive Breakpoints: Tablet & Laptop/Desktop */
+@media (min-width: 768px) {
+  .queue-content {
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 24px 32px 64px;
+    gap: 20px;
+  }
+
+  .queue-cards-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .queue-content {
+    max-width: 1240px;
+    padding: 32px 48px 80px;
+    gap: 24px;
+  }
+
+  .queue-cards-list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+

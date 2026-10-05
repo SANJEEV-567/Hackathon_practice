@@ -269,3 +269,40 @@
   margin-bottom: 6px;
 }
 
+/* Responsive Breakpoints: Tablet & Laptop/Desktop */
+@media (min-width: 768px) {
+  .alerts-content {
+    max-width: 860px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 24px 32px 64px;
+    gap: 20px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .alerts-content {
+    max-width: 1240px;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    grid-gap: 28px;
+    align-items: start;
+    padding: 32px 48px 80px;
+  }
+
+  .feeds-header-row,
+  .filter-chips-scroll,
+  .tactical-run-banner {
+    grid-column: 1 / -1;
+  }
+
+  .active-ops-section {
+    grid-column: 1;
+  }
+
+  .earlier-ops-section,
+  .channels-config-card {
+    grid-column: 2;
+  }
+}
+

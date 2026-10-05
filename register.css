@@ -431,3 +431,24 @@
   flex-shrink: 0;
 }
 
+/* Tablet & Laptop / Desktop Responsive Mode */
+@media (min-width: 601px) {
+  body {
+    background: radial-gradient(circle at top right, #e2f1e7 0%, #f1f5f9 60%, #e8edf3 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+  }
+
+  .register-screen {
+    max-width: 720px;
+    margin: auto;
+    border-radius: 28px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+    padding: 36px 44px;
+    min-height: auto;
+  }
+}
+

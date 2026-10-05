@@ -653,3 +653,36 @@
   border-top: 1px solid #bbf7d0;
 }
 
+/* Tablet & Laptop / Desktop Responsive Breakpoints */
+@media (min-width: 768px) {
+  .explore-content {
+    max-width: 100%;
+    padding: 24px 36px 90px 36px;
+    gap: 24px;
+  }
+
+  .logistics-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .dispatch-lots-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .explore-content {
+    max-width: var(--desktop-max-width);
+    margin: 0 auto;
+    width: 100%;
+    padding: 28px 48px 100px 48px;
+  }
+
+  .dispatch-lots-list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+

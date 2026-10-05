@@ -316,3 +316,46 @@
   color: #0f172a;
 }
 
+/* Responsive Breakpoints: Tablet & Laptop/Desktop */
+@media (min-width: 768px) {
+  .impact-content {
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 24px 32px 64px;
+    gap: 20px;
+  }
+
+  .impact-kpi-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .impact-content {
+    max-width: 1240px;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    grid-gap: 28px;
+    align-items: start;
+    padding: 32px 48px 80px;
+  }
+
+  .impact-header-block,
+  .period-tabs-nav,
+  .impact-kpi-grid {
+    grid-column: 1 / -1;
+  }
+
+  .surplus-chart-card,
+  .category-split-card {
+    grid-column: 1;
+  }
+
+  .community-reach-card,
+  .value-rescued-card {
+    grid-column: 2;
+  }
+}
+
