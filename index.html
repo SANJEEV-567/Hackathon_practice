@@ -22,96 +22,104 @@
       </div>
     </header>
 
-    <!-- Hero Visual Section -->
-    <div class="hero-backdrop" aria-hidden="true"></div>
+    <!-- Main Hero Composition -->
+    <div class="welcome-hero-wrap">
+      <!-- Content Column (Left on Desktop, Bottom Sheet on Mobile) -->
+      <main class="welcome-content-col">
+        <div class="drag-handle-bar" aria-hidden="true"></div>
 
-    <section class="hero-floating-badges">
-      <div class="stat-pill-dark">
-        <span class="pulse-dot"></span>
-        <span>18,400+ meals saved this month</span>
-      </div>
-      <div class="stat-pill-light">
-        <svg viewBox="0 0 24 24" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
-          <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
-        </svg>
-        <span>ZERO WASTE</span>
-      </div>
-    </section>
-
-    <!-- Bottom Sheet Content Modal -->
-    <main class="bottom-sheet-card">
-      <div class="drag-handle-bar" aria-hidden="true"></div>
-
-      <div class="sheet-badge-row">
-        <div class="sheet-logo-circle">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="m16 2-4 4 4 4"/>
-            <path d="M12 6h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h2"/>
-            <path d="m8 10-4-4 4-4"/>
-          </svg>
+        <div class="sheet-badge-row">
+          <div class="sheet-logo-circle" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m16 2-4 4 4 4"/>
+              <path d="M12 6h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h2"/>
+              <path d="m8 10-4-4 4-4"/>
+            </svg>
+          </div>
+          <div class="sheet-badge-text">
+            <span class="sheet-badge-brand">SurplusLink</span>
+            <span class="sheet-badge-category">Bakery Rescue</span>
+          </div>
         </div>
-        <div class="sheet-badge-text">
-          <span class="sheet-badge-brand">SurplusLink</span>
-          <span class="sheet-badge-category">Bakery Rescue</span>
+
+        <header class="sheet-title-group">
+          <h1 class="sheet-title-main">SurplusLink</h1>
+          <h2 class="sheet-title-sub">Bakery Rescue</h2>
+        </header>
+
+        <p class="sheet-description">
+          Rescuing fresh bakery food before closing time.
+        </p>
+
+        <div class="sheet-action">
+          <a href="role-selection.html" class="sheet-btn-start">
+            <span>Get Started</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
         </div>
-      </div>
 
-      <header class="sheet-title-group">
-        <h1 class="sheet-title-main">SurplusLink</h1>
-        <h2 class="sheet-title-sub">Bakery Rescue</h2>
-      </header>
+        <footer class="sheet-features-row" aria-label="Key Benefits">
+          <article class="feature-pill-card">
+            <div class="feature-icon-circle" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 13h18c0 4.418-4.03 8-9 8s-9-3.582-9-8Z"/>
+                <path d="M12 5C7 5 4 8 3 13h18c-1-5-4-8-9-8Z"/>
+                <path d="M8 9a4 4 0 0 1 4-4"/>
+                <path d="M12 5a4 4 0 0 1 4 4"/>
+              </svg>
+            </div>
+            <span class="feature-label">Fresh Breads &amp; Pastries</span>
+          </article>
 
-      <p class="sheet-description">
-        Rescuing fresh bakery food before closing time.
-      </p>
+          <article class="feature-pill-card">
+            <div class="feature-icon-circle" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+                <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+              </svg>
+            </div>
+            <span class="feature-label">Zero Bakery Waste</span>
+          </article>
 
-      <div class="sheet-action">
-        <a href="role-selection.html" class="sheet-btn-start">
-          <span>Get Started</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
-          </svg>
-        </a>
-      </div>
+          <article class="feature-pill-card">
+            <div class="feature-icon-circle" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <span class="feature-label">Local Community Support</span>
+          </article>
+        </footer>
+      </main>
 
-      <footer class="sheet-features-row">
-        <article class="feature-pill-card">
-          <div class="feature-icon-circle">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M3 13h18c0 4.418-4.03 8-9 8s-9-3.582-9-8Z"/>
-              <path d="M12 5C7 5 4 8 3 13h18c-1-5-4-8-9-8Z"/>
-              <path d="M8 9a4 4 0 0 1 4-4"/>
-              <path d="M12 5a4 4 0 0 1 4 4"/>
-            </svg>
+      <!-- Visual Showcase Column (Right on Desktop, Top on Mobile) -->
+      <section class="welcome-visual-col" aria-label="Bakery Surplus Showcase">
+        <div class="hero-image-card">
+          <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1200&q=80" alt="Fresh artisanal sourdough boules and pastries in bakery baskets" class="hero-img">
+          <div class="hero-image-overlay" aria-hidden="true"></div>
+          
+          <div class="hero-floating-badges">
+            <div class="stat-pill-dark">
+              <span class="pulse-dot" aria-hidden="true"></span>
+              <span>18,400+ meals saved this month</span>
+            </div>
+            <div class="stat-pill-light">
+              <svg viewBox="0 0 24 24" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+                <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+              </svg>
+              <span>ZERO WASTE</span>
+            </div>
           </div>
-          <span class="feature-label">Fresh Breads & Pastries</span>
-        </article>
-
-        <article class="feature-pill-card">
-          <div class="feature-icon-circle">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
-              <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
-            </svg>
-          </div>
-          <span class="feature-label">Zero Bakery Waste</span>
-        </article>
-
-        <article class="feature-pill-card">
-          <div class="feature-icon-circle">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
-              <circle cx="9" cy="7" r="4"/>
-              <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-            </svg>
-          </div>
-          <span class="feature-label">Local Community Support</span>
-        </article>
-      </footer>
-    </main>
+        </div>
+      </section>
+    </div>
 
     <!-- Prototype Screen Switcher (Drawer for Evaluator Navigation) -->
     <details class="prototype-drawer">
